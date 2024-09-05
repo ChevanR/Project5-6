@@ -9,6 +9,10 @@
 
 ## Afspraken
 
+### Documentatie
+
+Alle documentatie wordt bijgehouden via de [Github](https://github.com/xDragy/Project5-6/).
+
 ### Planning
 
 Planning en taken, zullen bijgehouden worden via [Trello](https://trello.com/b/k2OQDucs/project-5-6).
@@ -29,7 +33,7 @@ Bijeenkomsten vinden plaats op:
 Uitzonderingen voor aanwezigheid, moeten van te voren worden aan gegeven (via [Discord](https://discord.com)) en worden goed gekeurd.
 > **Werk is niet een geldige reden voor afwezigheid.**
 
-Het is aan ieder zelf, om deze tijden vrij te houden voor het project.
+Het is aan iedere partij, om deze tijden vrij te houden voor het project.
 
 Indien een partij later komt dan afgesproken, door onverwachte situaties, moet er op het moment dat de partij weet dat hij of zij te laat komt, via [Discord](https://discord.com) een bericht volgen met de reden en nieuwe tijd. Op het moment dat dit te vaak gebeurt valt dit onder de overtreding van de overeenkomst.
 
@@ -56,13 +60,17 @@ Door ondertekening bevestigen de betrokkenen dat zij de bepalingen van deze over
 Ondertekend op [Datum]:
 
 Naam: Pepijn Brinkman
+
 Handtekening: _______________________
 
 Naam: Pirmin Kalbermatter
+
 Handtekening: _______________________
 
 Naam: Derk Ottersberg
+
 Handtekening: _______________________
 
 Naam: Chevan Ramcharan
+
 Handtekening: _______________________
