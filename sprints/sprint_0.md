@@ -1,0 +1,16 @@
+# Sprint 0
+- Wat houdt het project in? 
+  - Haptic devices
+  - Simulatie in de cloud renderen 
+  - >to work towards a solution where the visuo-haptic rendering software runs in the cloud
+  - Testen van de gebruikers ervaring, terwijl de simulatie in de cloud rendert, met voornamelijk oog op vertragingen.
+  - > to experiment with how that may influence the user experience (e.g. due to delay)
+- Wat is het probleem? 
+  - Dat de simulatie in de cloud gerenderd moet worden, maar ook kijken of dit wel mogelijk is ivm met de vertragingen. 
+- Wat zijn mogelijke oplossingen? 
+  - Daar zijn we nog niet aan toe.
+- Welke afsprak en heb je gemaakt met je team en je opdrachtgever? 
+  - Anders dan op de gegeven momenten aanwezig zijn, nog niet veel. 
+- Hoe heb je je projectbeheer opgezet? 
+  - Github, Trello, Discord server
+- Welke voorbereidingen heb je voor Sprint 1 getroffen
