@@ -28,8 +28,3 @@
 | **MVP Creation** | Build a minimal viable product (MVP) for the haptic interface in the XR environment, where the user can **see** and **touch** the terrain model | - Integrate haptic feedback with cloud-based architecture <br> - Ensure minimal functionality for demo purposes |
 | Demo of idea     | Present a demo showcasing the MVP, including haptic feedback and the terrain model                                                              | - Prepare demo <br> - Present findings to stakeholders                                                          |
 
-<style>
-    .table th {
-        background: darkgrey;
-    }
-</style>
