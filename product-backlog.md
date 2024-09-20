@@ -28,3 +28,38 @@
 | **MVP Creation** | Build a minimal viable product (MVP) for the haptic interface in the XR environment, where the user can **see** and **touch** the terrain model | - Integrate haptic feedback with cloud-based architecture <br> - Ensure minimal functionality for demo purposes |
 | Demo of idea     | Present a demo showcasing the MVP, including haptic feedback and the terrain model                                                              | - Prepare demo <br> - Present findings to stakeholders                                                          |
 
+```mermaid
+---
+title: Flow of the Project
+---
+flowchart LR
+
+    subgraph Cloud Project[cloud]
+        cloudResearch(Research cloud computing, Unity, docker)
+        makeUnity(Make a Unity project with multiplayer features)
+        Implement(Run the Unity project in a cloud-like environment)
+        networkTest(Research network degradation on the cloud for user experience)
+        demoShow(Show the demo of MVP for the 15 Nov Deadline)
+
+        cloudResearch --> makeUnity
+        makeUnity-- Rapid implementation --> Implement
+        Implement-- Fix issues and iterate --> makeUnity
+        Implement --> networkTest --> demoShow
+    end
+
+    subgraph Haptic Device Integration
+        setupXR(Setup and research for using the Haptic device in Unity)
+        userXP(Describe the user experience with the Haptic device)
+        networkTest2(Test network delays and how user experience changes with artificial degradation)
+        MVP(Make an MVP for Haptic device implementation)
+
+        setupXR -->  userXP
+        userXP-- Implement Haptic feedback into terrain model --> MVP --> networkTest2
+    end
+
+    demoShow --> networkTest2
+
+deliverable(Deliver the deliverables, all the test data, research and MVP's)
+
+networkTest2 --> deliverable
+```
