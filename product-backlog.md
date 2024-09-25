@@ -48,7 +48,7 @@ classDef note stroke:#0f0
         <img src="../images/vr.png"/>
         Make a Unity projects with VR features) 
 
-        Implement(Run the Unity project in a cloud-like environment<img src="../images/server.png"/>)
+        Implement(Run the Unity project in a cloud-like environment<img src="https://github.com/xDragy/Project5-6/tree/pepijn/images/server.png"/>)
         noteTwo[[Basically, meaning able to introduce artificial network degredation]]
         networkTest(Research network degradation on the cloud for user experience<img src="../images/networktest.png"/>)
         demoShow(Show the demo of MVP for the 15 Nov Deadline)
