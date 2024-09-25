@@ -28,29 +28,29 @@
 | **MVP Creation** | Build a minimal viable product (MVP) for the haptic interface in the XR environment, where the user can **see** and **touch** the terrain model | - Integrate haptic feedback with cloud-based architecture <br> - Ensure minimal functionality for demo purposes |
 | Demo of idea     | Present a demo showcasing the MVP, including haptic feedback and the terrain model                                                              | - Prepare demo <br> - Present findings to stakeholders                                                          |
 
-![](./images/research.png)
-
 ```mermaid
 ---
 title: Flow of the Project
 ---
+
+
 flowchart LR
 %% styling
 classDef note stroke:#0f0
 
 
     subgraph Cloud Project[cloud]
-        cloudResearch(Research cloud computing, Unity, docker<img src="./images/research.png"/>)
+        cloudResearch(Research cloud computing, Unity, docker<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/data-research-1551336-1314951.png"/>)
         noteOne[[NVIDIA cloudXR, ALVR, Moonlight]]
         
         makeUnity(Make a Unity project with multiplayer features 
-        <img src='./images/unity.png'/>
-        <img src="./images/vr.png"/>
+        <img src='https://cdn.iconscout.com/icon/premium/png-512-thumb/unity-2749374-2284764.png'/>
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/vr-goggles-8395356-6949899.png"/>
         Make a Unity projects with VR features) 
 
-        Implement(Run the Unity project in a cloud-like environment<img src="./images/server.png"/>)
+        Implement(Run the Unity project in a cloud-like environment<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/network-9047763-7437453.png"/>)
         noteTwo[[Basically, meaning able to introduce artificial network degredation]]
-        networkTest(Research network degradation on the cloud for user experience<img src="./images/networktest.png"/>)
+        networkTest(Research network degradation on the cloud for user experience<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/wireless-network-1593197-1354560.png"/>)
         demoShow(Show the demo of MVP for the 15 Nov Deadline)
         feedbackImplement(Implement any feedback given at demo time, and improve the cloud project if needed)
 
@@ -63,8 +63,6 @@ classDef note stroke:#0f0
 
         noteOne:::note
         noteTwo:::note
-
-        
     end
 
     subgraph Haptic Device Integration
