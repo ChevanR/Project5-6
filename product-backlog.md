@@ -28,3 +28,56 @@
 | **MVP Creation** | Build a minimal viable product (MVP) for the haptic interface in the XR environment, where the user can **see** and **touch** the terrain model | - Integrate haptic feedback with cloud-based architecture <br> - Ensure minimal functionality for demo purposes |
 | Demo of idea     | Present a demo showcasing the MVP, including haptic feedback and the terrain model                                                              | - Prepare demo <br> - Present findings to stakeholders                                                          |
 
+```mermaid
+---
+title: Flow of the Project
+---
+
+
+flowchart LR
+%% styling
+classDef note stroke:#0f0
+
+
+    subgraph Cloud Project[cloud]
+        cloudResearch(Research cloud computing, Unity, docker<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/data-research-1551336-1314951.png"/>)
+        noteOne[[NVIDIA cloudXR, ALVR, Moonlight]]
+        
+        makeUnity(Make a Unity project with multiplayer features 
+        <img src='https://cdn.iconscout.com/icon/premium/png-512-thumb/unity-2749374-2284764.png'/>
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/vr-goggles-8395356-6949899.png"/>
+        Make a Unity projects with VR features) 
+
+        Implement(Run the Unity project in a cloud-like environment<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/network-9047763-7437453.png"/>)
+        noteTwo[[Basically, meaning able to introduce artificial network degredation]]
+        networkTest(Research network degradation on the cloud for user experience<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/wireless-network-1593197-1354560.png"/>)
+        demoShow(Show the demo of MVP for the 15 Nov Deadline)
+        feedbackImplement(Implement any feedback given at demo time, and improve the cloud project if needed)
+
+        cloudResearch --> makeUnity
+        cloudResearch --o noteOne
+        Implement --o noteTwo
+        makeUnity-- Rapid implementation ---> Implement
+        Implement-- Fix issues and iterate ---> makeUnity
+        Implement --> networkTest --> demoShow --> feedbackImplement
+
+        noteOne:::note
+        noteTwo:::note
+    end
+
+    subgraph Haptic Device Integration
+        setupXR(Setup and research for using the Haptic device in Unity)
+        userXP(Describe the user experience with the Haptic device)
+        networkTest2(Gather user experience with regards to artificial network degredation)
+        MVP(Make an MVP for Haptic device implementation)
+
+        setupXR -->  userXP
+        userXP-- Implement Haptic feedback into terrain model --> MVP --> networkTest2
+    end
+
+    networkTest-- Use the network testing on the Haptic device-->networkTest2
+
+deliverable(Deliver the deliverables, all the test data, research and MVP's)
+
+networkTest2 --> deliverable
+```
