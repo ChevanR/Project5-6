@@ -28,12 +28,12 @@
 | **MVP Creation** | Build a minimal viable product (MVP) for the haptic interface in the XR environment, where the user can **see** and **touch** the terrain model | - Integrate haptic feedback with cloud-based architecture <br> - Ensure minimal functionality for demo purposes |
 | Demo of idea     | Present a demo showcasing the MVP, including haptic feedback and the terrain model                                                              | - Prepare demo <br> - Present findings to stakeholders                                                          |
 
+![](./images/research.png)
+
 ```mermaid
 ---
 title: Flow of the Project
 ---
-
-
 flowchart LR
 %% styling
 classDef note stroke:#0f0
@@ -44,13 +44,13 @@ classDef note stroke:#0f0
         noteOne[[NVIDIA cloudXR, ALVR, Moonlight]]
         
         makeUnity(Make a Unity project with multiplayer features 
-        <img src='../images/unity.png'/>
-        <img src="../images/vr.png"/>
+        <img src='./images/unity.png'/>
+        <img src="./images/vr.png"/>
         Make a Unity projects with VR features) 
 
-        Implement(Run the Unity project in a cloud-like environment<img src="../images/server.png"/>)
+        Implement(Run the Unity project in a cloud-like environment<img src="./images/server.png"/>)
         noteTwo[[Basically, meaning able to introduce artificial network degredation]]
-        networkTest(Research network degradation on the cloud for user experience<img src="../images/networktest.png"/>)
+        networkTest(Research network degradation on the cloud for user experience<img src="./images/networktest.png"/>)
         demoShow(Show the demo of MVP for the 15 Nov Deadline)
         feedbackImplement(Implement any feedback given at demo time, and improve the cloud project if needed)
 
