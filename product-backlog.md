@@ -5,27 +5,20 @@
 
 <div class="table">
 
-| Part             | Description                                                                                          | Tasks                                                                                                                |
-| ---------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Setup idea       | Define the concept and framework for network architecture simulation                                 | - Research <br> - Document findings                                                                                  |
-| Implement idea   | Develop the network simulation focusing on cloud-based architecture and network degradation effects  | - Learn Unity for implementation <br> - Experiment with a laptop as a server <br> - Integrate cloud-based simulation |
-| Network test     | Test the network architecture under different conditions of latency and bandwidth limitations        | - Simulate network degradations <br> - Run performance tests <br> - Analyze system performance (latency, bandwidth)  |
-| **MVP Creation** | Build a minimal viable product (MVP) showcasing basic functionality of cloud-based architecture      | - Implement basic cloud-based network with haptic feedback <br> - Ensure minimal functionality for presentation      |
-| Demo of idea     | Present a working demo showcasing the MVP, including network effects and haptic feedback integration | - Prepare and present demo to stakeholders                                                                           |
+## Research-Oriented Product Backlog: Cloud VR Project
 
+| **Requirement**                        | **Description**                                                                             | **Tasks**                                                                                                      | **MoSCoW** |
+| -------------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------- |
+| **Local Server Setup**                 | Configure your laptop to function as a local server for remote rendering                    | - Install necessary software for server (e.g., Unity, networking tools) <br> - Set up local server environment | Must       |
+| **VR Application Development**         | Create or modify a VR application to support remote rendering and multiplayer features      | - Develop Unity project with multiplayer capabilities <br> - Implement network synchronization for users       | Must       |
+| **Remote Rendering Implementation**    | Ensure that rendering is handled on the server while users connect remotely                 | - Set up server-side rendering using Unity <br> - Test remote streaming to VR headsets                         | Must       |
+| **Network Degradation Simulation**     | Implement a tool to simulate various network conditions on the local server                 | - Create scripts to simulate latency, packet loss, and bandwidth changes <br> - Test tool effectiveness        | Must       |
+| **Performance Data Logging**           | Collect and log performance metrics during VR sessions (latency, frame rate, user feedback) | - Implement some kind of data logging <br> - Store logs locally for analysis                                   | Must       |
+| **Data Analysis**                      | Analyze collected data to understand the effects of network degradation on user experience  | - Process and visualize performance data <br> - Summarize findings related to user feedback                    | Must       |
+| **MVP Creation for Stakeholders**      | Build a minimal viable product (MVP) showcasing remote rendering and network functionality  | - Implement core features needed for MVP <br> - Ensure stability and performance for demonstration             | Must       |
+| **Iterate Based on Feedback**          | Implement improvements based on user feedback from demo and testing sessions                | - Refine VR app and network simulation features <br> - Re-test with improved functionalities                   | Could      |
+| **Multiplayer Feature Implementation** | Implement a multiplayer feature, such that it can be tested for synchronisation issues      | - Develop and integrate multiplayer features in the VR application <br> - Validate synchronization of actions  | Should     |
+| **Test with Diverse User Groups**      | Conduct tests with various participants (family, friends, students, teachers)               | - Prepare recruitment strategies for testers <br> - Provide clear instructions for testing sessions            | Should     |
 
-### Haptic Interface Implementation in XR Environment
-
-| Part            | Description                                                                    | Tasks                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| Setup           | Define and configure the haptic devices for XR environment                     | - Research suitable haptic devices (e.g., Sense Glove, Ultraleap) <br> - Setup Unity with XR support           |
-| User experience | Investigate the user experience with haptic feedback in the XR environment     | - Test haptic feedback on different XR elements (e.g., terrain elevation) depending on the haptic device       |
-| Network test    | Test how network degradation affects the haptic feedback in the XR environment | - Simulate network delays and bandwidth limitations <br> - Measure impact on user experience (visual & haptic) |
-
-### Final MVP
-| Part             | Description                                                                                                                                     | Tasks                                                                                                           |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| **MVP Creation** | Build a minimal viable product (MVP) for the haptic interface in the XR environment, where the user can **see** and **touch** the terrain model | - Integrate haptic feedback with cloud-based architecture <br> - Ensure minimal functionality for demo purposes |
-| Demo of idea     | Present a demo showcasing the MVP, including haptic feedback and the terrain model                                                              | - Prepare demo <br> - Present findings to stakeholders                                                          |
 
 ![](./src/flowchart.png)
