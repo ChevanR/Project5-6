@@ -5,28 +5,34 @@ title: Flow of the Project
 
 flowchart LR
 %% styling
-classDef note stroke:#0f0
+classDef note stroke:#0fd
 
 
     subgraph Cloud Project[cloud]
         cloudResearch(Research cloud computing, Unity, docker<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/data-research-1551336-1314951.png"/>)
         noteOne[[NVIDIA cloudXR, ALVR, Moonlight]]
         
-        makeUnity(Make a Unity project with VR features
-        <img src='https://cdn.iconscout.com/icon/premium/png-512-thumb/unity-2749374-2284764.png'/>
-        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/vr-goggles-8395356-6949899.png"/>) 
+        makeUnity(Make/Aquire a Unity project with VR features 
+        <span style="color:lime;">SteamVR example</span>
+        <img src='https://cdn.iconscout.com/icon/premium/png-512-thumb/unity-2749374-2284764.png'/>) 
 
-        Implement(Run the Unity project in a cloud-like environment<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/network-9047763-7437453.png"/>)
+        Implement(Stream the data from the laptop to the vr headset 
+        <span style="color:lime;">ALVR</span> 
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/vr-goggles-8395356-6949899.png"/>)
+
         noteTwo[[Basically, meaning able to introduce artificial network degredation]]
-        networkTest(Research network degradation on the cloud for user experience<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/wireless-network-1593197-1354560.png"/>)
+
+        networkTest(Research network degradation on the cloud for user experience 
+        <span style="color:lime;">Clumsy</span>
+        <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/wireless-network-1593197-1354560.png"/>)
+
         demoShow(Show the gathered data and user experience, for the 15 Nov Deadline)
         feedbackImplement(Implement any feedback given at demo time, and improve the cloud project if needed)
 
         cloudResearch --> makeUnity
         cloudResearch --o noteOne
         Implement --o noteTwo
-        makeUnity-- Rapid implementation ---> Implement
-        Implement-- Fix issues and iterate ---> makeUnity
+        makeUnity--> Implement
         Implement --> networkTest --> demoShow --> feedbackImplement
 
         noteOne:::note
