@@ -1,11 +1,11 @@
 # <div style="text-align: center">Samenwerkings overeenkomst</div>
-> Project 5/6
-> Haptic interface in a networked virtual environment
+Project 5/6
+Haptic interface in a networked virtual environment
 ## Betrokken partijen
-> Pepijn Brinkman (1078024)
-> Chevan Ramcharan (1072166)
-> Derk Ottersberg (1076265)
-> Pirmin Kalbermatter (1069542)
+Pepijn Brinkman (1078024)
+Chevan Ramcharan (1072166)
+Derk Ottersberg (1076265)
+Pirmin Kalbermatter (1069542)
 
 ## Afspraken
 
@@ -27,11 +27,11 @@ Indien een partij zich niet houdt aan de bovenstaande afspraken over de planning
 Ieder is bij elke bijeenkomst aanwezig.
 
 Bijeenkomsten vinden plaats op:
-> Maandagen de tijden gegeven volgens het rooster voor feedback.
-> Vrijdagen 10:00-17:00
+Maandagen de tijden gegeven volgens het rooster voor feedback.
+Vrijdagen 10:00-17:00
 
 Uitzonderingen voor aanwezigheid, moeten van te voren worden aan gegeven (via [Discord](https://discord.com)) en worden goed gekeurd.
-> **Werk is niet een geldige reden voor afwezigheid.**
+**Werk is niet een geldige reden voor afwezigheid.**
 
 Het is aan iedere partij, om deze tijden vrij te houden voor het project.
 
@@ -57,20 +57,32 @@ Bij ondertekening van dit document verklaren de ondergetekenden dat zij de inhou
 
 Door ondertekening bevestigen de betrokkenen dat zij de bepalingen van deze overeenkomst accepteren en zich eraan zullen houden. Indien er wijzigingen worden aangebracht in de overeenkomst, zal dit gebeuren volgens de vastgestelde procedure zoals beschreven in de sectie "Wijziging in samenwerkingsovereenkomst".
 
-Ondertekend op [Datum]:
+Ondertekend op 11/10/2024:
 
 Naam: Pepijn Brinkman
 
-Handtekening: _______________________
+
+
+
+Handtekening: 
 
 Naam: Pirmin Kalbermatter
 
-Handtekening: _______________________
+
+
+
+Handtekening:
 
 Naam: Derk Ottersberg
 
-Handtekening: _______________________
+
+
+
+Handtekening:
 
 Naam: Chevan Ramcharan
 
-Handtekening: _______________________
+
+
+
+Handtekening:
