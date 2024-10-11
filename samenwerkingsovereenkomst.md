@@ -1,7 +1,10 @@
-# <div style="text-align: center">Samenwerkings overeenkomst</div>
+# Samenwerkings overeenkomst
+
 Project 5/6
 Haptic interface in a networked virtual environment
+
 ## Betrokken partijen
+
 Pepijn Brinkman (1078024)
 Chevan Ramcharan (1072166)
 Derk Ottersberg (1076265)
