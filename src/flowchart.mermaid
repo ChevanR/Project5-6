@@ -1,14 +1,14 @@
 ---
 title: Flow of the Project
 ---
-
-
+%%{init: {'themeVariables': { 'fontSize': '23px', 'fontFamily': 'Inter'}}}%%
 flowchart LR
 %% styling
 classDef note stroke:#0fd
 
 
     subgraph Cloud Project[cloud]
+    
         cloudResearch(Research cloud computing, Unity, docker<img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/data-research-1551336-1314951.png"/>)
         noteOne[[NVIDIA cloudXR, ALVR, Moonlight]]
         
@@ -39,7 +39,7 @@ classDef note stroke:#0fd
         noteTwo:::note
     end
 
-    subgraph Haptic Device Integration
+    subgraph Haptic[Haptic Device Integration]
         setupXR(Setup and research for using the Haptic device in Unity)
         userXP(Describe the user experience with the Haptic device)
         networkTest2(Gather user experience with regards to artificial network degredation)
