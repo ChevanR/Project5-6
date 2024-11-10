@@ -73,7 +73,10 @@ To graph this data, run the "json-to-graph.py" script fill in the file location 
 ## User experience testing
 - Start the testworld
 - Explain to the user how the test works
-- Start the test
+- Start the test using the clumsy tool
+
+#### Clumsy
+<\placeholder>
 
 #### Questions
 Questions marked in bold should be asked for every change made
