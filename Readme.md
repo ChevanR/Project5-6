@@ -68,3 +68,20 @@ Value explanation <\placeholder>
 Value explanation <\placeholder>
 
 To graph this data, run the "json-to-graph.py" script fill in the file location and see the newly created .html file which contains the graphs, <b>be sure to give it another name before graphing a new json logging file, as it will overwrite it.</b>
+
+
+## User experience testing
+- Start the testworld
+- Explain to the user how the test works
+- Start the test
+
+#### Questions
+Questions marked in bold should be asked for every change made
+| Question/Score                                          | 1                      | 2   | 3   | 4                         | 5   | 6   | 7                      | 8   | 9   | 10                          |
+| ------------------------------------------------------- | ---------------------- | --- | --- | ------------------------- | --- | --- | ---------------------- | --- | --- | --------------------------- |
+| How much have you used VR before                        | Never                  |     |     | A few times (1–3 times)   |     |     | Moderate use (weekly)  |     |     | Very frequently (daily)     |
+| **Feeling (Motion sickness)**                           | Extremely nauseous     |     |     | Noticeable discomfort     |     |     | Slight discomfort      |     |     | No discomfort at all        |
+| **Can you still perform the same task you were doing?** | Not at all             |     |     | Somewhat (50% effective)  |     |     | Mostly (75% effective) |     |     | Completely (100% effective) |
+| **How usable is it?**                                   | Not usable (0%)        |     |     | Partially usable (40%)    |     |     | Usable with ease (70%) |     |     | Extremely usable (100%)     |
+| **Are you able to mitigate the tampering?**             | No, it is too bad (0%) |     |     | Partially mitigated (40%) |     |     | Mostly mitigated (70%) |     |     | Fully mitigated (100%)      |
+
