@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Experience Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .question {
+            margin: 20px 0;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .slider-output {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .slider {
+            width: 100%;
+        }
+
+        #json-output {
+            margin-top: 20px;
+            white-space: pre-wrap;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>VR Experience Survey</h2>
+    <form id="survey-form">
+        <!-- Tester ID -->
+        <div class="question">
+            <label for="tester-id">Tester ID:</label>
+            <input type="text" id="tester-id" required>
+            <p id="tester-id-error" style="color: red; display: none;">Please enter a valid Tester ID. (Should be a
+                number)</p>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="question">
+            <label>How much have you used VR before?</label>
+            <div class="slider-label">
+                <span>Never</span><span>A few times (1–3)</span><span>Moderate (weekly)</span><span>Daily</span>
+            </div>
+            <input type="range" min="1" max="10" value="5" class="slider" id="vr-usage">
+            <p>Score: <span class="slider-output" id="vr-usage-output">5</span></p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <label><strong>Feeling (Motion sickness)</strong></label>
+            <div class="slider-label">
+                <span>Extremely nauseous</span><span>Noticeable discomfort</span><span>Slight discomfort</span><span>No
+                    discomfort</span>
+            </div>
+            <input type="range" min="1" max="10" value="5" class="slider" id="motion-sickness">
+            <p>Score: <span class="slider-output" id="motion-sickness-output">5</span></p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <label><strong>Can you still perform the same task you were doing?</strong></label>
+            <div class="slider-label">
+                <span>Not at all</span><span>Somewhat (50%)</span><span>Mostly (75%)</span><span>Completely
+                    (100%)</span>
+            </div>
+            <input type="range" min="1" max="10" value="5" class="slider" id="task-performance">
+            <p>Score: <span class="slider-output" id="task-performance-output">5</span></p>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <label><strong>How usable is it?</strong></label>
+            <div class="slider-label">
+                <span>Not usable (0%)</span><span>Partially usable (40%)</span><span>Usable with ease
+                    (70%)</span><span>Extremely usable (100%)</span>
+            </div>
+            <input type="range" min="1" max="10" value="5" class="slider" id="usability">
+            <p>Score: <span class="slider-output" id="usability-output">5</span></p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <label><strong>Are you able to mitigate the tampering?</strong></label>
+            <div class="slider-label">
+                <span>Not at all (0%)</span><span>Partially (40%)</span><span>Mostly (70%)</span><span>Fully
+                    (100%)</span>
+            </div>
+            <input type="range" min="1" max="10" value="5" class="slider" id="tampering-mitigation">
+            <p>Score: <span class="slider-output" id="tampering-mitigation-output">5</span></p>
+        </div>
+
+        <!-- Latency Slider -->
+        <div class="question">
+            <label for="latency">Latency (0-1000 ms)</label>
+            <input type="number" id="latency" min="0" max="1000" value="500">
+        </div>
+
+        <!-- Bandwidth Input -->
+
+        <div class="question">
+            <label for="bandwidth">Bandwidth (KB/s):</label>
+            <input type="number" id="bandwidth" value="1000">
+            <p id="bandwidth-error" style="color: red; display: none;">Please enter a valid number for Bandwidth.</p>
+        </div>
+    </form>
+
+    <!-- Submit Button -->
+    <button type="button" onclick="exportToJson()">Submit and Export to JSON</button>
+    <button id="copy-btn" onclick="copyJsonToClipboard()">Copy JSON to Clipboard</button>
+
+    <!-- JSON Output -->
+    <h3>JSON Output</h3>
+    <div id="json-output"></div>
+
+    <script>
+        // Update displayed values when sliders are moved
+        const questions = [
+            { id: "vr-usage", outputId: "vr-usage-output" },
+            { id: "motion-sickness", outputId: "motion-sickness-output" },
+            { id: "task-performance", outputId: "task-performance-output" },
+            { id: "usability", outputId: "usability-output" },
+            { id: "tampering-mitigation", outputId: "tampering-mitigation-output" },
+            { id: "latency", outputId: "latency-output", suffix: " ms" }
+        ];
+
+        questions.forEach(({ id, outputId, suffix = "" }) => {
+            const slider = document.getElementById(id);
+            const output = document.getElementById(outputId);
+            slider.oninput = () => {
+                output.textContent = slider.value + suffix;
+            };
+        });
+
+        // Load saved values from localStorage when the page loads
+        window.onload = function () {
+            // Check if data exists in localStorage and populate the fields
+            const savedTesterId = localStorage.getItem("testerId");
+            const savedVrUsage = localStorage.getItem("vrUsage");
+
+            if (savedTesterId) {
+                document.getElementById("tester-id").value = savedTesterId;
+            }
+            if (savedVrUsage) {
+                document.getElementById("vr-usage").value = savedVrUsage;
+            }
+        };
+
+        // Function to export data to JSON with error handling
+        function exportToJson(event) {
+            // Prevent form submission or page reload
+
+            // Reset error messages
+            resetErrors();
+
+            const testerId = document.getElementById("tester-id").value;
+            const vrUsage = parseInt(document.getElementById("vr-usage").value);
+            const motionSickness = parseInt(document.getElementById("motion-sickness").value);
+            const taskPerformance = parseInt(document.getElementById("task-performance").value);
+            const usability = parseInt(document.getElementById("usability").value);
+            const tamperingMitigation = parseInt(document.getElementById("tampering-mitigation").value);
+            const latency = parseInt(document.getElementById("latency").value);
+            const bandwidth = parseInt(document.getElementById("bandwidth").value);
+
+            // Validation checks
+            let isValid = true;
+
+            // Check for Tester ID
+            if (!testerId || isNaN(testerId)) {
+                document.getElementById("tester-id-error").style.display = "block";
+                isValid = false;
+            }
+
+            // Check for valid Bandwidth
+            if (isNaN(bandwidth) || bandwidth <= 0) {
+                document.getElementById("bandwidth-error").style.display = "block";
+                isValid = false;
+            }
+
+            // Check if all sliders have valid number inputs
+            if (isNaN(vrUsage) || isNaN(motionSickness) || isNaN(taskPerformance) ||
+                isNaN(usability) || isNaN(tamperingMitigation) || isNaN(latency)) {
+                alert("Please fill in all questions with valid numbers.");
+                isValid = false;
+            }
+
+            // If all validations pass, proceed with exporting to JSON
+            if (isValid) {
+                // Save testerId and vrUsage to localStorage to persist across page reloads
+                localStorage.setItem("testerId", testerId);
+                localStorage.setItem("vrUsage", vrUsage);
+
+                const data = {
+                    testerId: testerId,
+                    vrUsage: vrUsage,
+                    motionSickness: motionSickness,
+                    taskPerformance: taskPerformance,
+                    usability: usability,
+                    tamperingMitigation: tamperingMitigation,
+                    latency: latency,
+                    bandwidth: bandwidth
+                };
+
+                // Display JSON data on the page
+                document.getElementById("json-output").textContent = JSON.stringify(data, null, 2);
+            }
+        }
+
+        // Function to reset error messages
+        function resetErrors() {
+            // Hide all error messages
+            document.getElementById("tester-id-error").style.display = "none";
+            document.getElementById("bandwidth-error").style.display = "none";
+        }
+
+        // Function to copy the generated JSON to the clipboard
+        function copyJsonToClipboard() {
+            const jsonOutput = document.getElementById("json-output").textContent;
+
+            // Create a temporary text area element to copy the content
+            const textarea = document.createElement("textarea");
+            textarea.value = jsonOutput;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+
+            // Optionally, display a confirmation message
+            alert("JSON copied to clipboard!");
+        }
+
+        // Add an event listener to handle pressing Enter without reloading
+        document.getElementById("tester-id").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                exportToJson(event); // Call export function on Enter press
+            }
+        });
+
+        // Add an event listener to handle the form submission or button click
+        document.getElementById("export-btn").addEventListener("click", exportToJson);
+
+
+    </script>
+</body>
+
+</html>
