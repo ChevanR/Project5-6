@@ -84,14 +84,14 @@ It contains the following two entries:
 ###### Value explanation
 - **video_packets_total**: The total number of video packets sent so far. Here, 84,666 packets have been sent.
 - **video_packets_per_sec**: The current rate of video packets sent per second, measured as 60 packets per second in this data.
-- **video_mbytes_total**: The total amount of video data sent, measured in megabytes. Here, it totals 23 MB.
-- **video_mbits_per_sec**: The transmission rate of video data in megabits per second. Here, it’s approximately 0.00576 Mbps.
-- **packets_lost_total**: Total number of packets lost during transmission. Here, it is 0, indicating no packet loss.
-- **packets_lost_per_sec**: Number of packets lost per second, also 0 in this case, suggesting a stable connection.
-- **battery_hmd**: Current battery level of the VR headset (HMD), which is at 100%.
+- **video_mbytes_total**: The total amount of video data sent, measured in megabytes.
+- **video_mbits_per_sec**: The transmission rate of video data in megabits per second.
+- **packets_lost_total**: Total number of packets lost during transmission. 0 indicating no packet loss.
+- **packets_lost_per_sec**: Number of packets lost per second.
+- **battery_hmd**: Current battery level of the VR headset (HMD).
 - **hmd_plugged**: Indicates whether the headset is plugged in (`true`) or running on battery (`false`). Here, it is `true`, meaning it is plugged in.
 
-The others are averages for the previous values.
+The other values which look the same as for the Statistics data, are the averages of those values.
 
 
 To graph this data, run the "json-to-graph.py" script fill in the file location and see the newly created .html file which contains the graphs, <b>be sure to give it another name before graphing a new json logging file, as it will overwrite it.</b>
