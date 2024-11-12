@@ -14,7 +14,7 @@ LOG_DIR = "alvr-logs"
 
 # Ensure the log directory exists
 os.makedirs(LOG_DIR, exist_ok=True)
-RECEIVE_TIMEOUT = 15  # Time to wait for a message before timing out (in seconds)
+RECEIVE_TIMEOUT = 60  # Time to wait for a message before timing out (in seconds)
 
 # Generate a unique filename based on the current date and time
 filename = datetime.now().strftime("%Y%m%d_%H%M%S_%f") + ".json"
@@ -40,23 +40,28 @@ def close_json_array():
 atexit.register(close_json_array)
 
 async def hello():
-    async with connect("ws://localhost:8082/api/events",ping_interval=10, ping_timeout=5) as websocket:
-        # Write the JSON data to a new file
-        with open(LOG_FILE, 'a') as f:
-            f.write('[')
+    while True:
+        try:
+            async with connect("ws://localhost:8082/api/events",ping_interval=5, ping_timeout=20) as websocket:
+            # Write the JSON data to a new file
+                with open(LOG_FILE, 'a') as f:
+                    f.write('[')
 
-            while True:
-                # Receive a message from the WebSocket
-                message = await asyncio.wait_for(websocket.recv(), timeout=RECEIVE_TIMEOUT)
-                # Parse the message as JSON
-                try:
-                    data = json.loads(message)
-                except json.JSONDecodeError:
-                    print("Received invalid JSON message")
-                    continue
+                    while True:
+                        try:
+                    # Receive a message from the WebSocket
+                            message = await asyncio.wait_for(websocket.recv(), timeout=RECEIVE_TIMEOUT)
+                    # Parse the message as JSON
+                            data = json.loads(message)
+                            json.dump(data, f, indent=3)
+                            f.write(',')
+                        except json.JSONDecodeError:
+                            print("Received invalid JSON message")
+                            continue
+        except Exception:
+            continue
 
-                json.dump(data, f, indent=4)
-                f.write(',')
+               
 
 
 if __name__ == "__main__":
