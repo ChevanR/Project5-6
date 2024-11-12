@@ -101,17 +101,6 @@
             <p>Score: <span class="slider-output" id="usability-output">5</span></p>
         </div>
 
-        <!-- Question 5 -->
-        <div class="question">
-            <label><strong>Are you able to mitigate the tampering?</strong></label>
-            <div class="slider-label">
-                <span>Not at all (0%)</span><span>Partially (40%)</span><span>Mostly (70%)</span><span>Fully
-                    (100%)</span>
-            </div>
-            <input type="range" min="1" max="10" value="5" class="slider" id="tampering-mitigation">
-            <p>Score: <span class="slider-output" id="tampering-mitigation-output">5</span></p>
-        </div>
-
         <!-- Latency Slider -->
         <div class="question">
             <label for="latency">Latency (0-1000 ms)</label>
@@ -142,7 +131,6 @@
             { id: "motion-sickness", outputId: "motion-sickness-output" },
             { id: "task-performance", outputId: "task-performance-output" },
             { id: "usability", outputId: "usability-output" },
-            { id: "tampering-mitigation", outputId: "tampering-mitigation-output" },
             { id: "latency", outputId: "latency-output", suffix: " ms" }
         ];
 
@@ -163,7 +151,6 @@
                 { id: "motion-sickness", key: "motionSickness" },
                 { id: "task-performance", key: "taskPerformance" },
                 { id: "usability", key: "usability" },
-                { id: "tampering-mitigation", key: "tamperingMitigation" },
                 { id: "latency", key: "latency" },
                 { id: "bandwidth", key: "bandwidth" }
             ];
@@ -192,7 +179,6 @@
             const motionSickness = parseInt(document.getElementById("motion-sickness").value);
             const taskPerformance = parseInt(document.getElementById("task-performance").value);
             const usability = parseInt(document.getElementById("usability").value);
-            const tamperingMitigation = parseInt(document.getElementById("tampering-mitigation").value);
             const latency = parseInt(document.getElementById("latency").value);
             const bandwidth = parseInt(document.getElementById("bandwidth").value);
 
@@ -213,7 +199,7 @@
 
             // Check if all sliders have valid number inputs
             if (isNaN(vrUsage) || isNaN(motionSickness) || isNaN(taskPerformance) ||
-                isNaN(usability) || isNaN(tamperingMitigation) || isNaN(latency)) {
+                isNaN(usability) || isNaN(latency)) {
                 alert("Please fill in all questions with valid numbers.");
                 isValid = false;
             }
@@ -227,7 +213,6 @@
                     { key: "motionSickness", value: motionSickness },
                     { key: "taskPerformance", value: taskPerformance },
                     { key: "usability", value: usability },
-                    { key: "tamperingMitigation", value: tamperingMitigation },
                     { key: "latency", value: latency },
                     { key: "bandwidth", value: bandwidth }
                 ];
