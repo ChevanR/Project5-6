@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """Client using the asyncio API."""
 
 import asyncio
@@ -8,7 +6,6 @@ import json
 from datetime import datetime
 from websockets.asyncio.client import connect
 import atexit
-import signal
 
 LOG_DIR = "alvr-logs"
 
