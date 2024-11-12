@@ -2,12 +2,28 @@ import json
 from bokeh.plotting import figure, show
 from bokeh.layouts import row
 from bokeh.models import HoverTool, ColumnDataSource
-
+import numpy as np
 
 # Function to load data from JSON file
 def load_data_from_json(filepath):
     with open(filepath, 'r') as file:
         return json.load(file)
+
+def downsize_data(data, target_size=1000):
+    data_length = len(data)
+    if data_length <= target_size:
+        return data  # No downsizing needed
+    # Calculate bucket size
+    bucket_size = data_length // target_size
+    # Calculate averages for each bucket
+    return [np.mean(data[i * bucket_size:(i + 1) * bucket_size]) for i in range(target_size)]
+
+
+def cap_values(data, limit):
+    for i in range(len(data)):
+        if data[i] > limit:
+            data[i] = limit
+    return data
 
 
 # Ask the user for the JSON file path and remove any quotes
@@ -20,9 +36,9 @@ while True:
         break  # If successful, break out of the loop
     except FileNotFoundError:
         print(f"Error: The file '{filename}' was not found. Please try again.")
-    except json.JSONDecodeError:
-        print(f"Error: The file '{filename}' is not a valid JSON file. Please try again.")
-
+    except json.JSONDecodeError as e:
+        print("JSON Decode Error:", e)
+        print("Error Position:", f"Line {e.lineno}, Column {e.colno}")
 # Prepare data lists
 total_latency_ms = []
 network_latency_ms = []
@@ -37,13 +53,23 @@ for index, entry in enumerate(data):
 
     if entry['event_type']['id'] == "StatisticsSummary":
         continue
+    if entry['event_type']['id'] == "Log":
+        continue
     elif entry['event_type']['id'] == "GraphStatistics":
         # Extract the required values from the nested data
         total_latency_ms.append(event_data['total_pipeline_latency_s'] * 1000)  # Latency in ms
         network_latency_ms.append(event_data['network_s'] * 1000)  # Network latency in ms
         client_frame_rate.append(event_data['client_fps'])  # Client FPS
         server_frame_rate.append(event_data['server_fps'])  # Server FPS
-        bitrate_MBps.append(event_data['actual_bitrate_bps'] / (8 * 1024))  # Bitrate in Mbps
+        bitrate_MBps.append(event_data['actual_bitrate_bps'] / (1024**2))  # Bitrate in Mbps
+
+# Downsize each list if it exceeds 10,000 elements
+total_latency_ms = downsize_data(total_latency_ms)
+network_latency_ms = downsize_data(network_latency_ms)
+client_frame_rate = downsize_data(client_frame_rate)
+server_frame_rate = downsize_data(server_frame_rate)
+bitrate_MBps = downsize_data(bitrate_MBps)
+bitrate_MBps = cap_values(bitrate_MBps, 2000)
 
 # Create time_index as a range based on the length of the data
 time_index = list(range(len(total_latency_ms)))
