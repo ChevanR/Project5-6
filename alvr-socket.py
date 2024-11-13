@@ -58,6 +58,7 @@ async def hello():
                             print("Received invalid JSON message")
                             continue
             except Exception:
+                print('Disconnected')
                 continue
 
 
