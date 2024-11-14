@@ -206,6 +206,9 @@
 
             // If all validations pass, proceed with exporting to JSON
             if (isValid) {
+                // Get the current time and format it as a string
+                const currentTime = new Date().toISOString();
+
                 // List of fields and corresponding localStorage keys
                 const fields = [
                     { key: "testerId", value: testerId },
@@ -214,7 +217,8 @@
                     { key: "taskPerformance", value: taskPerformance },
                     { key: "usability", value: usability },
                     { key: "latency", value: latency },
-                    { key: "bandwidth", value: bandwidth }
+                    { key: "bandwidth", value: bandwidth },
+                    { key: "timestamp", value: currentTime }
                 ];
 
                 // Create data object and save each field to localStorage
