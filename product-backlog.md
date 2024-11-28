@@ -3,8 +3,6 @@
 ### Network Architecture Simulation
 
 
-<div class="table">
-
 ## Research-Oriented Product Backlog: Cloud VR Project
 
 | **Requirement**                                  | **Description**                                                                                        | **Tasks**                                                                                                                                     | Acceptence criteria                                                                                                                                                                         | **MoSCoW** | **Done** |
