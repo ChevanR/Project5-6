@@ -1,10 +1,28 @@
-# The 'docs' Branch
-This branch holds information including but not limited to:
-- Risk management
-- Product Backlog
-- Sprints that concluded
-- Test plan
-- Test results
-- User research
-  - Research about available data
-  - User experiments about the data
+# Omslag
+
+# Samenvatting
+
+# Inleiding
+
+# Theoretisch kader
+
+
+# Methode
+
+# Resultaten
+
+[Pre-research](literature-research.md) on the topic.
+
+Virtualising.
+Logging.
+Graphing.
+Haptic.
+User experience.
+
+# Conclusie
+
+# Bronnen lijst
+
+# Woorden/symbolen lijst
+
+# Bijlagen
