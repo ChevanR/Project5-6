@@ -13,11 +13,11 @@
 
 [Pre-research](literature-research.md) on the topic.
 
-Virtualising.
-Logging.
-Graphing.
-Haptic.
-User experience.
+Virtualising.  
+Logging.  
+Graphing.  
+Haptic.  
+User experience.  
 
 # Conclusie
 
