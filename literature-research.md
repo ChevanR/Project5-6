@@ -1,33 +1,46 @@
 ## Literature Review: Haptic Interface in an Extended Reality Environment
 
 ### Introduction
-This review explores the innovative integration of ultrasonic arrays for haptic feedback and the execution of virtual reality (VR) simulations through cloud-based systems. Both technologies are not big in terms of research and development, presenting unique challenges and opportunities. The goal is to collect and document existing data, pinpoint research gaps, and define a clear experimental direction for our project.
+This review explores two exciting areas: using ultrasonic arrays for haptic feedback and streaming virtual reality (VR) experiences via cloud systems. Since these fields are still developing, the goal is to gather existing research, pinpoint the gaps, and chart a path for future experiments.
 
-### Research questions
-Our study is guided by two main questions:
-1. **How can ultrasonic array technology be effectively integrated for haptic feedback in extended reality settings?**
-2. **What challenges do we face with VR simulations over cloud networks, and how can these be effectively streamed to VR headsets remotely?**
+### Research Questions
+This study is centered on two key questions:
+1. **How can ultrasonic array technology enhance haptic feedback in extended reality environments?**
+2. **What are the main challenges in streaming VR simulations over cloud networks, and how can these be overcome to ensure smooth delivery to remote VR headsets?**
 
-### Step 1: Subproblems identification
-- **Ultrasonic Array for Haptic Feedback**: Ultrasonic technology promises new methods for generating tactile feedback in virtual environments, yet its practical applications remain largely unexplored.
-- **VR in Cloud Environments**: As cloud gaming and simulations gain traction, adapting these for VR could transform accessibility and scalability. However, detailed research on optimizing such systems for real-time user interactions and varied network conditions is scarce.
+### Methodology
+#### Step 1: Subproblems Identification
+- **Ultrasonic Arrays for Haptics:**: Investigating how ultrasonic technology can create unique tactile sensations in virtual environments—a concept with a lot of potential but limited real-world applications.
+- **Cloud VR Streaming:**: Examining how VR content can be streamed efficiently via the cloud, addressing issues like network variability, latency, and user experience.
 
-### Step 2: Search Terms
-Identified search terms for a thorough exploration:
+#### Step 2: Defining Search Term
+Key terms identified for in-depth exploration include:
 - For **Ultrasonic Haptic Arrays**: "ultrasonic array AND haptic feedback", "innovations in haptic technology", "haptic feedback using ultrasonic waves"
 - For **Cloud-based VR**: "virtual reality cloud rendering", "streaming VR content", "network requirements for cloud VR", "user experience in cloud-based VR"
 
-### Step 3: Creating Search strings
-Combining search terms into comprehensive queries:
-- For **Ultrasonic Haptic Feedback**: "integration of ultrasonic arrays AND extended reality", "use of ultrasonic waves in virtual environments"
-- For **Cloud VR Systems**: "challenges in cloud-based VR streaming", "optimizing VR simulation for cloud delivery", "impact of network variability on VR performance"
+#### Step 3: Crafting Search Strings To streamline the literature search, the following search strings were created:
+- **Ultrasonic Haptic Feedback**: `"integration of ultrasonic arrays AND extended reality", "use of ultrasonic waves in virtual environments"`
+- **Cloud VR Systems**: `"challenges in cloud-based VR streaming", "optimizing VR simulation for cloud delivery", "impact of network variability on VR performance"`
 
-### Step 4: Performing the search
-Utilizing databases such as Google Scholar, IEEE Xplore, ACM Digital Library, and relevant industry reports to gather extensive data including peer-reviewed articles, technical reports, and whitepapers.
+#### Step 4: Performing the Search
+Research was conducted using databases such as Google Scholar, IEEE Xplore, ACM Digital Library, and industry reports to gather a comprehensive set of peer-reviewed articles, technical reports, and whitepapers.
 
-### Step 5: Analyzing the findings
-- **Ultrasonic Haptic Feedback**: The initial search indicates an emerging field ripe for practical research contributions.
-- **Cloud-based VR**: Preliminary research shows substantial theoretical development but a lack of applied research, particularly in live VR streaming optimization for varying network conditions.
+### Findings
+#### Ultrasonic Haptic Feedback
+Research suggests that ultrasonic arrays are promising for medical and industrial uses, but their application in VR for consumer markets is underexplored. This presents a clear opportunity for innovative work.
+
+#### Cloud-based VR
+While theoretical models on cloud VR infrastructure exist, practical implementations for real-time VR streaming—especially under varying network conditions—remain scarce. This is a critical gap for future development.
 
 ### Conclusion
-This literature review highlights the pioneering aspects of our project, identifying significant opportunities to impact the fields of ultrasonic haptic feedback and cloud-based VR. By recognizing existing research gaps, our project is strategically positioned to focus experimental efforts on these areas, enhancing both the technological understanding and practical implementations.
+This review highlights the potential to contribute groundbreaking research in two key areas: ultrasonic haptic feedback and cloud-based VR. By addressing the gaps in these fields, experimental initiatives can unlock new technological and practical applications.
+
+### Future Work
+- **Experimental Prototyping**: Build and test prototypes to integrate ultrasonic feedback into VR systems.
+- **Cloud Streaming Optimization**: Develop and test cloud streaming methods to minimize latency and improve user experience for real-time VR.
+
+### References
+- [ALVR - Open Source ALVR (Air Light VR) Repository](https://github.com/alvr-org/ALVR) - GitHub repository for ALVR, an open-source remote VR display for Oculus Quest.
+- [Ultraleap Haptics Development Kit](https://leap2.ultraleap.com/products/haptics-development-kit) - Official page for the Ultraleap Haptics Development Kit, detailing technologies and applications for advanced haptic feedback.
+- [Unity Manual - Virtual Reality Overview](https://docs.unity3d.com/Manual/VROverview.html) - Unity documentation providing an overview of virtual reality features and development guidelines within the Unity Engine.
+
