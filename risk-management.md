@@ -1,4 +1,5 @@
 ### Internal Risks
+<br>
 
 | Risk Factor                              | Probability (1-5) | Impact (1-5) | Risk Score (Probability * Impact) | Mitigation Strategy                          | Post-Mitigation Probability (1-5) | Post-Mitigation Impact (1-5) | Post-Mitigation Risk Score (Probability * Impact) |
 |------------------------------------------|-------------------|--------------|-----------------------------------|----------------------------------------------|------------------------------------|------------------------------|---------------------------------------------------|
@@ -10,6 +11,7 @@
 | Technical challenges in software/hardware integration | 2           | 5            | 10                                | Conduct thorough testing of all integrations | 1                                  | 5                        | 5                                                 |
 
 ### External Risks
+<br>
 
 | Risk Factor                              | Probability (1-5) | Impact (1-5) | Risk Score (Probability * Impact) | Mitigation Strategy                          | Post-Mitigation Probability (1-5) | Post-Mitigation Impact (1-5) | Post-Mitigation Risk Score (Probability * Impact) |
 |------------------------------------------|-------------------|--------------|-----------------------------------|----------------------------------------------|------------------------------------|------------------------------|---------------------------------------------------|
@@ -19,11 +21,11 @@
 | Inability to sufficiently test           | 5                 | 3            | 15                                | Implement staged testing and pilot programs   | 2                                  | 3                        | 6                                                 |
 | Drop-out of a team member                | 1                 | 4            | 4                                 | Develop a strong backup plan                  | 1                                  | 4                        | 4                                                 |
 
-
-
 <br>
-__Internal Risks__
 
+
+__Internal Risks__
+<br>
 Absence of Team Members
 Mitigation: Backup roles and cross-training ensure coverage for absent team members. This reduces the likelihood of delays.
 
@@ -43,9 +45,9 @@ Technical Challenges in Software/Hardware Integration
 Mitigation: Thorough testing and early prototyping identify and resolve integration issues early on.
 
 
-<br>
-__External Risks__
 
+__External Risks__
+<br>
 Changing Requirements from Stakeholders
 Mitigation: Regular stakeholder engagement helps align project goals with current requirements, preventing scope creep.
 
