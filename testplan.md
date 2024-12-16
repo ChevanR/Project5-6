@@ -36,7 +36,7 @@ Graphing script
 - **Data Analysis**                                
     - Graphs are made from the collected user data and performance data, to show corrolations between these to, acceptence is given by product owner
 - **MVP Creation for Stakeholders**                
-    - ...
+    - Have a MVP containing atleast a simulated network environment containig both remote VR rendering and haptic feedback
 - **Iterate Based on Feedback**                    
     - ...
 - **Multiplayer Feature Implementation**           
@@ -51,3 +51,15 @@ Graphing script
     - A user can from country A connect to the server in Country B, this can be tested by using a VPN connection between the server and client
 - **Users get haptic feedback**                    
     - The user can feel the difference between the height of different buildings or terrain
+- **Clients identification**
+    - A client can be identified based on name tag or color
+- **Haptic controls map movement**
+    - The map moves around based on the input of the user
+- **Client needs to go between 1st and 3rd person**
+    - The user can switch their camera between 1st and 3rd person
+- **1st and 3rd person needs to be done with gestures (haptic)**
+    - The switching between 1st and 3rd person, can now be done using gestures
+- **Client communication via microphone**
+    - Clients can communicate with one another using their microphones
+- **Haptic & VR user experience**
+    - Acceptence is given by the product owner, but should include all three combinations of latency with VR & Haptic
