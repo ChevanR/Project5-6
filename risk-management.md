@@ -20,6 +20,8 @@
 | Drop-out of a team member                | 1                 | 4            | 4                                 | Develop a strong backup plan                  | 1                                  | 4                        | 4                                                 |
 
 
+
+
 __Internal Risks__
 
 Absence of Team Members
@@ -39,6 +41,8 @@ Mitigation: Setting realistic timelines with buffer periods for delays ensures m
 
 Technical Challenges in Software/Hardware Integration
 Mitigation: Thorough testing and early prototyping identify and resolve integration issues early on.
+
+
 
 __External Risks__
 
