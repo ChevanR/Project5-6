@@ -20,7 +20,8 @@
 | Drop-out of a team member                | 1                 | 4            | 4                                 | Develop a strong backup plan                  | 1                                  | 4                        | 4                                                 |
 
 
-Internal Risks
+__Internal Risks__
+
 Absence of Team Members
 Mitigation: Backup roles and cross-training ensure coverage for absent team members. This reduces the likelihood of delays.
 
@@ -39,7 +40,8 @@ Mitigation: Setting realistic timelines with buffer periods for delays ensures m
 Technical Challenges in Software/Hardware Integration
 Mitigation: Thorough testing and early prototyping identify and resolve integration issues early on.
 
-External Risks
+__External Risks__
+
 Changing Requirements from Stakeholders
 Mitigation: Regular stakeholder engagement helps align project goals with current requirements, preventing scope creep.
 
