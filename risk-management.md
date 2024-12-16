@@ -21,7 +21,7 @@
 
 
 
-
+<br>
 __Internal Risks__
 
 Absence of Team Members
@@ -43,7 +43,7 @@ Technical Challenges in Software/Hardware Integration
 Mitigation: Thorough testing and early prototyping identify and resolve integration issues early on.
 
 
-
+<br>
 __External Risks__
 
 Changing Requirements from Stakeholders
