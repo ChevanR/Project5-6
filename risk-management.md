@@ -26,30 +26,30 @@
 
 __Internal Risks__
 <br>
-Absence of Team Members
+Absence of Team Members<br>
 Mitigation: Backup roles and cross-training ensure coverage for absent team members. This reduces the likelihood of delays.
-
-Insufficient Communication
+<br>
+Insufficient Communication<br>
 Mitigation: Daily stand-up meetings enhance project transparency and coordination, significantly reducing communication issues.
-
-Tasks Not Completed on Time
+<br>
+Tasks Not Completed on Time<br>
 Mitigation: Improved project management through tools like WhatsApp enhances task coordination and accountability.
-
-Lack of Experience/Knowledge
+<br>
+Lack of Experience/Knowledge<br>
 Mitigation: Training and mentoring enhance skills, reducing the impact of inexperience on project progress.
-
-Unrealistic Scheduling
+<br>
+Unrealistic Scheduling<br>
 Mitigation: Setting realistic timelines with buffer periods for delays ensures more accurate scheduling and less stress.
-
-Technical Challenges in Software/Hardware Integration
+<br>
+Technical Challenges in Software/Hardware Integration<br>
 Mitigation: Thorough testing and early prototyping identify and resolve integration issues early on.
 
 
 
 __External Risks__
 <br>
-Changing Requirements from Stakeholders
+Changing Requirements from Stakeholders <br>
 Mitigation: Regular stakeholder engagement helps align project goals with current requirements, preventing scope creep.
-
-Hardware Limitations
+<br>
+Hardware Limitations <br>
 Mitigation: Evaluating alternative hardware solutions ensures that system requirements are met without compromising performance.
