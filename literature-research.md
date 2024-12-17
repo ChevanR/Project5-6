@@ -1,7 +1,7 @@
 ## Literature Review: Haptic Interface in an Extended Reality Environment
 
 ### Introduction
-This review explores two emerging areas: using ultrasonic arrays for haptic feedback and streaming virtual reality (VR) experiences via cloud systems. These fields are still nascent in research and development, presenting unique challenges and opportunities. The goal is to gather existing research, pinpoint the gaps, and chart a path for future experiments.
+This review explores two emerging areas: using ultrasonic arrays for haptic feedback and streaming virtual reality (VR) experiences via cloud systems. These fields are still not established in research and development, presenting unique challenges and opportunities. The goal is to gather existing research, pinpoint the gaps, and chart a path for future experiments.
 
 ### Research Questions
 This study is centered on two key questions:
@@ -15,7 +15,7 @@ This study is centered on two key questions:
 
 #### Step 2: Defining Search Terms
 Key terms identified for in-depth exploration include:
-- For **Ultrasonic Haptic Arrays**: "ultrasonic array AND haptic feedback", "innovations in haptic technology", "haptic feedback using ultrasonic waves"
+- For **Ultrasonic Arrays**: "ultrasonic array AND haptic feedback", "innovations in haptic technology", "haptic feedback using ultrasonic waves"
 - For **Cloud-based VR**: "virtual reality cloud rendering", "streaming VR content", "network requirements for cloud VR", "user experience in cloud-based VR"
 
 #### Step 3: Crafting Search Strings
@@ -28,10 +28,10 @@ Research was conducted using databases such as Google Scholar, IEEE Xplore, ACM 
 
 ### Findings
 #### Ultrasonic Haptic Feedback
-Research suggests that ultrasonic arrays, traditionally used in medical and industrial settings, hold promise for consumer VR applications due to their ability to generate precise haptic feedback (Smith et al., 2023). However, their application in VR for consumer markets remains underexplored, presenting a clear opportunity for innovative work.
+Research suggests that ultrasonic arrays, traditionally used in medical and industrial settings, hold promise for consumer VR applications due to their ability to generate precise haptic feedback. However, their application in VR for consumer markets remains underexplored, presenting a clear opportunity for innovative work.
 
 #### Cloud-based VR
-While theoretical models on cloud VR infrastructure are well-documented (Jones, 2024), practical implementations for real-time VR streaming—especially under varying network conditions—are scarce. This gap is critical for future development, with network engineers and VR developers needing to collaborate closely to overcome these hurdles.
+While theoretical models on cloud VR infrastructure are well-documented, practical implementations for real-time VR streaming—especially under varying network conditions—are scarce. This gap is critical for future development, with network engineers and VR developers needing to collaborate closely to overcome these hurdles.
 
 ### Conclusion
 This review highlights the potential to contribute groundbreaking research in two key areas: ultrasonic haptic feedback and cloud-based VR. Addressing the gaps identified, particularly in practical implementations and technical optimizations, will significantly advance both technological understanding and practical applications.
