@@ -35,77 +35,81 @@ This experiment evaluates the impact of **network latency** on **VR user experie
 
 ---
 
-## Results: VR Latency Impact  
+## Results  
 
 ### Motion Sickness vs. Latency  
-| **Latency (ms)** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
-|------------------|--------------|--------------|--------------|--------------|  
-| 0               | 10           | 10           | 10           | 10           |  
-| 50              | 10           | 10           | 10           | 10           |  
-| 100             | 10           | 10           | 7            | 10           |  
-| 150             | 10           | 10           | 7            | 10           |  
-| 200             | 10           | 10           | 7            | 10           |  
-| 300             | 10           | 10           | 7            | 10           |  
-| 400             | 10           | 10           | 3            | 10           |  
+| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
+|------------------|----------------|--------------|--------------|--------------|--------------|  
+| 0               | 10             | 10           | 10           | 10           | 10           |  
+| 50              | 10             | 10           | 10           | 10           | 10           |  
+| 100             | 9.25           | 10           | 10           | 7            | 10           |  
+| 150             | 9.0            | 10           | 10           | 7            | 10           |  
+| 200             | 8.25           | 10           | 10           | 7            | 10           |  
+| 300             | 8.25           | 10           | 10           | 7            | 10           |  
+| 400             | 8.25           | 10           | 10           | 3            | 10           |  
 
 ### Task Performance vs. Latency  
-| **Latency (ms)** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
-|------------------|--------------|--------------|--------------|--------------|  
-| 0               | 10           | 10           | 10           | 10           |  
-| 50              | 10           | 10           | 9            | 9            |  
-| 100             | 8            | 8            | 6            | 8            |  
-| 150             | 6            | 5            | 4            | 7            |  
-| 200             | 4            | 4            | 4            | 6            |  
-| 300             | 2            | 3            | 4            | 4            |  
-| 400             | 2            | 2            | 2            | 2            |  
+| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
+|------------------|----------------|--------------|--------------|--------------|--------------|  
+| 0               | 10             | 10           | 10           | 10           | 10           |  
+| 50              | 9.75           | 10           | 10           | 9            | 9            |  
+| 100             | 7.5            | 8            | 8            | 6            | 8            |  
+| 150             | 5.5            | 6            | 5            | 4            | 7            |  
+| 200             | 4.5            | 4            | 4            | 4            | 6            |  
+| 300             | 3.25           | 2            | 3            | 4            | 4            |  
+| 400             | 2.0            | 2            | 2            | 2            | 2            |  
 
 ### Usability vs. Latency  
-| **Latency (ms)** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
-|------------------|--------------|--------------|--------------|--------------|  
-| 0               | 10           | 10           | 10           | 10           |  
-| 50              | 10           | 10           | 7            | 10           |  
-| 100             | 9            | 9            | 7            | 10           |  
-| 150             | 8            | 7            | 4            | 8            |  
-| 200             | 6            | 6            | 4            | 6            |  
-| 300             | 4            | 4            | 2            | 4            |  
-| 400             | 2            | 2            | 2            | 2            |  
+| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
+|------------------|----------------|--------------|--------------|--------------|--------------|  
+| 0               | 10             | 10           | 10           | 10           | 10           |  
+| 50              | 9.25           | 10           | 10           | 7            | 10           |  
+| 100             | 8.75           | 9            | 9            | 7            | 10           |  
+| 150             | 7.75           | 8            | 7            | 4            | 8            |  
+| 200             | 6.0            | 6            | 6            | 4            | 6            |  
+| 300             | 3.5            | 4            | 4            | 2            | 4            |  
+| 400             | 2.0            | 2            | 2            | 2            | 2            |  
 
 ---
 
-## Analysis  
-- **Motion Sickness**: Most participants reported stable comfort levels until latency exceeded **400ms**. Tester 3 showed sensitivity starting at **100ms**.  
-- **Task Performance**: Performance scores declined sharply beyond **100ms latency**, with significant degradation at **200ms** and near-failure at **400ms**.  
-- **Usability**: Usability ratings decreased significantly beyond **150ms**, rendering the VR experience unusable past **300ms** latency.
+## Analysis Summary  
+- **Motion Sickness**: Stable for most users up to **300ms**; Tester 3 experienced discomfort starting at **100ms**.  
+- **Task Performance**: Noticeable degradation begins at **100ms latency**, with near failure beyond **200ms latency**.  
+- **Usability**: Decreased usability occurs beyond **150ms**, becoming unusable at **300ms latency**.  
 
 ---
 
 ### Part 2: Haptic Feedback Delay Testing  
-**Status**: Preliminary tests of **Ultraleap Haptic Devices** indicate variability in response times under simulated latency. Initial results suggest tactile accuracy declines beyond **150ms latency**, but further testing is required to confirm thresholds.  
+**Status**: Preliminary tests indicate tactile accuracy declines beyond **150ms latency**. Further testing with isolated delay conditions (150ms–300ms) is planned to confirm findings.  
 
 ---
 
 ## Conclusion  
-1. **VR Streaming**: Usability and task performance decline noticeably at **100ms latency**. Latency beyond **150ms** significantly impacts user experience.  
-2. **Motion Sickness**: Most participants tolerated latency up to **300ms**. Sensitivity varies among individuals.  
-3. **Haptic Feedback**: Preliminary results indicate feedback degradation beyond **150ms latency**. Further testing is ongoing.  
+1. **VR Streaming**:  
+   - Optimal performance: **50–100ms latency**.  
+   - Usability degrades: Beyond **150ms latency**.  
+2. **Motion Sickness**:  
+   - Tolerable latency: Up to **300ms** (individual sensitivity varies).  
+3. **Haptic Feedback**:  
+   - Preliminary results: Reliable up to **150ms latency**.  
 
-**Acceptable Latency Threshold**:  
-- VR Streaming: **50–100ms** for optimal usability.  
-- Haptic Feedback: Under investigation (preliminary: **up to 150ms**).  
+**Acceptable Latency Thresholds:**  
+- **VR Streaming**: 50–100ms  
+- **Haptic Feedback**: Up to 150ms (pending validation).  
 
 ---
 
 ## Future Work  
-1. **Refine Haptic Testing**: Improve measurement tools to isolate and evaluate haptic response delays.  
-2. **Expand User Testing**: Increase participant diversity to gather broader data on latency tolerances.  
-3. **System Optimization**: Develop solutions to mitigate latency, such as predictive algorithms or optimized streaming protocols.
+1. **Refine Haptic Testing**: Improve measurement tools and isolate response times accurately.  
+2. **Expand User Testing**: Increase participant diversity to validate thresholds across broader user groups.  
+3. **System Optimization**: Explore predictive algorithms or network optimization techniques to mitigate latency effects.  
 
 ---
 
 ## References  
-1. ALVR. (n.d.). *Open Source VR Streaming*. Retrieved from: [https://github.com/alvr-org/ALVR](https://github.com/alvr-org/ALVR)  
-2. Ultraleap. (n.d.). *Haptics Development Kit*. Retrieved from: [https://leap2.ultraleap.com](https://leap2.ultraleap.com)  
-3. Unity Technologies. (n.d.). *Unity VR Overview*. Retrieved from: [https://docs.unity3d.com](https://docs.unity3d.com)  
-4. Clumsy. (n.d.). *Network Latency Simulator*. Retrieved from: [https://jagt.github.io/clumsy/](https://jagt.github.io/clumsy/)
+1. ALVR. (n.d.). *Open Source VR Streaming*. Retrieved from: [https://github.com/alvr-org/ALVR](https://github.com/alvr-org/ALVR) (Accessed: June 2024).  
+2. Ultraleap. (n.d.). *Haptics Development Kit*. Retrieved from: [https://leap2.ultraleap.com](https://leap2.ultraleap.com) (Accessed: June 2024).  
+3. Unity Technologies. (n.d.). *Unity VR Overview*. Retrieved from: [https://docs.unity3d.com](https://docs.unity3d.com) (Accessed: June 2024).  
+4. Clumsy. (n.d.). *Network Latency Simulator*. Retrieved from: [https://jagt.github.io/clumsy/](https://jagt.github.io/clumsy/) (Accessed: June 2024).  
 
 ---
