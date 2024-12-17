@@ -51,5 +51,14 @@ __External Risks__
 Changing Requirements from Stakeholders <br>
 Mitigation: Regular stakeholder engagement helps align project goals with current requirements, preventing scope creep. <br> 
 
-Hardware Limitations <br>
+Hardware Limitations<br>
 Mitigation: Evaluating alternative hardware solutions ensures that system requirements are met without compromising performance.<br>
+
+Limited Access to Data<br>
+Mitigation: Negotiate for broader data access through partnerships, data sharing agreements, or purchases. This approach aims to expand the datasets available to the project, ensuring a richer development environment.<br>
+
+Inability to Sufficiently Test<br> 
+Mitigation: Implement staged testing and pilot programs. This method starts with smaller, controlled testing environments to manage and mitigate risks early, progressively moving to larger scales to comprehensively assess the system’s performance under varied conditions.<br>
+
+Drop-out of a Team Member<br> 
+Mitigation: Develop a robust backup plan including cross-training team members and maintaining detailed project documentation. This ensures that other team members can efficiently take over responsibilities without significant loss of productivity or project momentum.<br>
