@@ -1,4 +1,4 @@
-# Changelog: VR & Haptic Integration Project  
+# Changelog: Haptic Interfaced in a Virtual Environment
 
 ## November 2024  
 
@@ -30,13 +30,13 @@
   - Implemented basic tactile sensations for different terrain heights.  
 
 ### 2024-12-08  
-- **Dedicated Server Integration**:  
-  - Set up AWS as a dedicated server for remote rendering.  
+- **P2P VPN Connection**:  
+  - Configured P2P VPN Configuration for remote rendering.  
   - Successfully tested server performance under various latency conditions.  
 
 ### 2024-12-11  
 - **Global Connectivity Tests**:  
-  - Simulated global connections using VPNs to verify server accessibility and performance worldwide.  
+  - Simulated global connections using VPN tools (e.g., OpenVPN) to verify server accessibility and performance worldwide.  
 
 ### 2024-12-15  
 - **Gesture-Based Controls for Camera Switching**:  
@@ -53,13 +53,13 @@
 
 ### 2025-01-08  
 - **Documentation and MVP Completion**:  
-  - Finalized all project documentation, including test plans and data analysis.  
+  - Finalized all project documentation, including test plans, technical reports, and data analysis.  
   - Prepared the MVP showcasing VR remote rendering, haptic integration, and network testing.  
 
 ### 2025-01-12  
 - **Project Finalized**:  
   - Delivered final MVP presentation to stakeholders.  
-  - Allocated spare time for minor optimizations and feedback incorporation.  
+  - Allocated time for final refinements and stakeholder feedback integration.  
 
 ---
 
