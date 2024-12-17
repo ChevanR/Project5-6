@@ -43,7 +43,7 @@ Mitigation: Setting realistic timelines with buffer periods for delays ensures m
 
 Technical Challenges in Software/Hardware Integration<br>
 Mitigation: Thorough testing and early prototyping identify and resolve integration issues early on.<br>
-
+<br>
 
 
 __External Risks__
