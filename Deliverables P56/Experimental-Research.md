@@ -15,19 +15,16 @@ This experiment evaluates the impact of latency on VR user experience and task p
 
 #### Part 1: VR Latency Impact Testing  
 **Setup**  
-- **Hardware Used**: Oculus Meta Quest 3, a VR system, and a standard laptop.  
+- **Hardware Used**: Oculus Meta Quest 3 and a standard laptop.  
 - **Software Used**: ALVR for VR streaming, Unity for controlled latency simulation.  
-- **Measurement Tools**: Unity Profiler for input latency and frame timing, user feedback forms.  
+- **Measurement Tools**: Unity Profiler for input latency and frame timing, user feedback forms used to assess the subjective experience of latency impacts on usability and comfort.
 
 **Procedure**  
-1. **Latency Simulation**: Simulated network latency in controlled increments (0ms, 50ms, 100ms, 150ms, 200ms, 300ms, 400ms).  
+1. **Latency Simulation**: Using Clumsy, network latency was simulated in controlled increments from 0ms to 400ms to mimic varying network conditions.
 2. **User Testing**:
-   - Users completed tasks (e.g., object manipulation and navigation) under each latency condition.
-   - Feedback was collected for:
-     - **Motion Sickness Level** (Scale: 1-10)
-     - **Task Performance Score** (Scale: 1-10)
-     - **Usability Score** (Scale: 1-10)
-3. **Data Collection**: Results were recorded per tester for each latency level.  
+   - Participants were instructed to complete a series of VR tasks, including object manipulation and navigation, under each latency setting.
+   - After each session, participants rated their experience based on motion sickness, task performance, and overall usability.
+3. **Data Collection**: Detailed logs were kept for each session, recording both quantitative data (frame rates, input delays) and qualitative feedback (user comfort levels and task difficulty).
 
 ---
 
@@ -75,9 +72,8 @@ This experiment evaluates the impact of latency on VR user experience and task p
 
 ---
 
-### Part 2: Haptic Feedback Delay Testing  
-**Status**:  
-The haptic feedback delay testing is still in progress. Preliminary results suggest a need to refine the test setup to measure tactile delays accurately.
+#### Part 2: Haptic Feedback Delay Testing  
+**Status**: Initial tests have begun to measure the response times of ultrasonic haptic devices under similar latency conditions. Preliminary findings suggest variability in feedback accuracy, prompting further investigation into optimal latency thresholds for effective tactile feedback.
 
 ---
 
@@ -88,16 +84,16 @@ The haptic feedback delay testing is still in progress. Preliminary results sugg
 
 ---
 
-### Future Work  
-- Complete the **haptic feedback latency** testing and integrate findings into the XR environment.  
-- Explore hardware solutions to improve response times for both visual and haptic interactions.
+**Future Steps**:
+   - Refine the experimental setup to isolate and measure specific delays introduced by haptic devices.
+   - Expand the user testing pool to gather a broader range of responses on the usability and comfort of haptic feedback under different latency conditions.
 
 ---
 
 ### References  
 - [ALVR - Open Source VR Streaming](https://github.com/alvr-org/ALVR)  
 - [Ultraleap Haptics Development Kit](https://leap2.ultraleap.com/products/haptics-development-kit)  
-- [Unity Manual - Virtual Reality Overview](https://docs.unity3d.com/Manual/VROverview.html)  
+- [Unity Manual - Virtual Reality Overview](https://docs.unity.com/Manual/VROverview.html)  
 - **Clumsy Network Tool** - A tool for simulating network conditions such as latency and packet loss.
 
 ---
