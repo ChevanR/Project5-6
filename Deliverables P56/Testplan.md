@@ -21,20 +21,20 @@ The following table summarizes the project requirements, prioritized using the *
 | 4      | Network Degradation Simulation                      | Must         |  
 | 5      | Performance Data Logging                            | Must         |  
 | 6      | Data Analysis                                       | Must         |  
-| 7      | MVP Creation for Stakeholders                       | Should       |  
-| 8      | Iterate Based on Feedback                           | Could        |  
-| 9      | Multiplayer Feature Implementation                  | Should       |  
-| 10     | Test with Diverse User Groups                       | Should       |  
-| 11     | Allow the usage for different VR headsets           | Could        |  
-| 12     | Usage of a dedicated server                         | Could        |  
-| 13     | Users can connect from all over the world           | Could        |  
-| 14     | Users get haptic feedback                           | Must         |  
-| 15     | Clients identification                              | Could        |  
-| 16     | Haptic controls map movement                        | Should       |  
-| 17     | Client needs to go between 1st and 3rd person       | Should       |  
-| 18     | 1st and 3rd person needs to be done with gestures   | Should       |  
-| 19     | Client communication via microphone                 | Could        |  
-| 20     | Haptic & VR user experience                         | Must         |  
+| 7      | Users get haptic feedback                           | Must         |  
+| 8      | Haptic & VR user experience                         | Must         |  
+| 9      | MVP Creation for Stakeholders                       | Should       |  
+| 10     | Multiplayer Feature Implementation                  | Should       |  
+| 11     | Test with Diverse User Groups                       | Should       |  
+| 12     | Haptic controls map movement                        | Should       |  
+| 13     | Switch between 1st and 3rd person                   | Should       |  
+| 14     | Gesture-based camera switching                      | Should       |  
+| 15     | Iterate Based on Feedback                           | Could        |  
+| 16     | Allow the usage for different VR headsets           | Could        |  
+| 17     | Usage of a dedicated server                         | Could        |  
+| 18     | Users can connect from all over the world           | Could        |  
+| 19     | Clients identification                              | Could        |  
+| 20     | Client communication via microphone                 | Could        |  
 
 ---
 
@@ -87,8 +87,8 @@ Evaluate VR performance under simulated latency and verify that performance metr
 Validate multiplayer connectivity and client identification features.  
 
 **Requirements Verified**  
-- **9**: Multiplayer Feature Implementation  
-- **15**: Clients Identification  
+- **10**: Multiplayer Feature Implementation  
+- **19**: Clients Identification  
 
 **Steps**  
 1. Launch the multiplayer Unity environment.  
@@ -106,8 +106,8 @@ Validate multiplayer connectivity and client identification features.
 Verify the integration of haptic feedback and gesture-based map controls.  
 
 **Requirements Verified**  
-- **14**: Users get haptic feedback  
-- **16**: Haptic controls map movement  
+- **7**: Users get haptic feedback  
+- **12**: Haptic controls map movement  
 
 **Steps**  
 1. Connect the **Ultraleap Haptic Device** to Unity.  
@@ -125,8 +125,8 @@ Verify the integration of haptic feedback and gesture-based map controls.
 Validate manual and gesture-based switching between first-person and third-person perspectives.  
 
 **Requirements Verified**  
-- **17**: Client needs to go between 1st and 3rd person  
-- **18**: 1st and 3rd person needs to be done with gestures  
+- **13**: Switch between 1st and 3rd person  
+- **14**: Gesture-based camera switching  
 
 **Steps**  
 1. Implement manual switching between first-person and third-person camera views.  
@@ -143,7 +143,7 @@ Validate manual and gesture-based switching between first-person and third-perso
 Assess the combined impact of latency on user experience with VR visuals and haptic feedback.  
 
 **Requirements Verified**  
-- **20**: Haptic & VR user experience  
+- **8**: Haptic & VR user experience  
 
 **Steps**  
 1. Connect the VR headset and Ultraleap Haptic Device.  
