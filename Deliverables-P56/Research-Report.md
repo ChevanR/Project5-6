@@ -28,6 +28,20 @@ The study combines **experimental testing** and **literature research**. Tools i
 - **Haptic Feedback**: Accuracy deteriorates beyond **150ms latency**, but remains functional up to this point.  
 - **Combined System**: Latency below **100ms** is required for smooth operation.  
 
+#### Architecture diagram
+![](Architecture%20diagram.png)
+
+Note that the delayed data sources can be modified with the latency needed.
+
+##### Sources:
+- Haptic: [Ultraleap](https://leap2.ultraleap.com/wp-content/uploads/2024/05/compact-array.png)
+- Unity Script: [cloudinary](https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1709143446/catalog/1597899066014560256/qtkclgncqpdd7ciftxfc.webp)
+- Clumsy: Screenshot
+- ALVR: [ALVR github](https://github.com/alvr-org/alvr)
+- Unity: [logos world](https://logos-world.net/wp-content/uploads/2021/11/Unity-Emblem.png)
+- SteamVR: [kxcdn](https://roadtovrlive-5ea0.kxcdn.com/wp-content/uploads/2020/07/steamvr-logo.png)
+- VR headset: [Notebookcheck](https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/FxivtNGaEAYau59.jpeg)
+
 ### Conclusion  
 VR streaming and haptic feedback can be integrated into a networked XR environment but are highly sensitive to latency. Network optimization and improved synchronization are key to enhancing system performance.  
 
