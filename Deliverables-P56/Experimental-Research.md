@@ -17,7 +17,7 @@ This experiment evaluates the impact of **network latency** on **VR user experie
 
 ### Part 1: VR Latency Impact Testing  
 **Setup**  
-- **Hardware**: Oculus Meta Quest 3 and a standard laptop.  
+- **Hardware**: Oculus Meta Quest 3 and a laptop containing a powerfull enough gpu.  
 - **Software**: ALVR for VR streaming, Unity for latency simulation.  
 - **Measurement Tools**: Unity Profiler (input latency, frame timing), user feedback forms (motion sickness, usability).  
 
