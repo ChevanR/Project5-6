@@ -52,7 +52,7 @@ To verify that the VR application renders correctly on a remote server and the V
 2. Connect the Oculus Quest 3 headset using ALVR.  
 3. Start the remote-rendering session.  
 4. Move the VR headset and confirm the camera movements in Unity.  
-5. Disconnect the VR headset and check that the game continues rendering on the laptop.  
+5. Disconnect the VR headset and ensure the VR application continues rendering on the server at a stable frame rate (e.g., 60 FPS).  
 
 #### Results  
 ✅ The VR application rendered correctly, and camera movements were synced with the headset. Rendering continued seamlessly when the VR headset disconnected.  
@@ -131,7 +131,7 @@ To verify switching between first and third-person perspectives using gestures.
 3. Test the switch manually and through gestures.  
 
 #### Results  
-✅ Switching between first and third-person views worked smoothly. Gestures successfully triggered the view switch with minimal delay.  
+✅ Switching between first and third-person views functioned as expected. Gestures successfully triggered the view switch with minimal observable latency.  
 
 ---
 
@@ -144,12 +144,12 @@ To assess the combined impact of latency on user experience with both VR visuals
 
 #### Steps  
 1. Connect the VR headset and Ultraleap Haptic Device.  
-2. Use Clumsy to introduce latency increments of 50ms, 100ms, and 200ms.  
-3. Users interact with both the haptic device and VR visuals simultaneously.  
-4. Collect user feedback using a questionnaire.  
+2. Use Clumsy to simulate network latency increments of 50ms, 100ms, and 200ms.  
+3. Have **at least 3 participants** interact with both VR visuals and haptic devices under simulated latency conditions.  
+4. Collect user feedback using questionnaires evaluating usability, task performance, and comfort.  
 
 #### Results  
-✅ Combined latency significantly reduced user experience at 200ms. Users reported usability issues beyond 100ms. Graphs confirmed the findings.
+✅ Combined latency noticeably impacted user experience at 200ms. Users reported usability degradation beyond 100ms. Graphs confirmed the findings.
 
 ---
 
@@ -160,7 +160,7 @@ The test plan systematically verified all **Must Have** requirements and several
 
 ### Conclusion  
 - **Must Have Requirements**: ✅ Completed and verified through extensive testing.  
-- **Should/Could Requirements**: 🟡 Partially done; pending minor refinements.  
+- **Should/Could Requirements**: 🟡 Partially completed; pending minor refinements.  
 - **Haptic Feedback and Network Testing**: Successfully demonstrated responsiveness and limitations under varying conditions.  
 
 The project is on track, with critical functionalities fully tested and validated for stakeholder review. Future work will focus on refining haptic features and optimizing network performance to improve overall user experience.  
