@@ -1,15 +1,17 @@
 # Test Plan: VR and Haptic Integration in an Extended Reality Environment  
 
-## Introduction  
-The purpose of this test plan is to systematically verify the requirements outlined in the product backlog for the VR and Haptic Cloud Integration project. Each test ensures that critical functionalities, such as VR application development, remote rendering, network degradation simulation, and haptic feedback, are implemented correctly and meet the acceptance criteria.  
+---
 
-This document presents an organized approach to testing, covering essential features and marking requirements as **done** upon validation.  
+## Introduction  
+The purpose of this test plan is to systematically validate the requirements outlined in the product backlog for the **VR and Haptic Cloud Integration** project. Each test ensures that critical functionalities—including VR application development, remote rendering, network degradation simulation, and haptic feedback—are implemented correctly and meet the defined acceptance criteria.  
+
+This document provides a structured approach to testing, with requirements categorized by priority and marked **done** upon successful verification.  
 
 ---
 
 ## Requirements (Product Backlog)  
 
-The requirements are based on the **MoSCoW** prioritization method (Must, Should, Could, Want). The following table summarizes the project requirements:  
+The following table summarizes the project requirements, prioritized using the **MoSCoW** method:  
 
 | **ID** | **Requirement**                                      | **Priority** |  
 | ------ | ---------------------------------------------------- | ------------ |  
@@ -39,130 +41,131 @@ The requirements are based on the **MoSCoW** prioritization method (Must, Should
 ## Test Plan  
 
 ### Test 1: VR Application and Remote Rendering Verification  
-#### Purpose  
-To verify that the VR application renders correctly on a remote server and the VR headset updates in real time.  
+**Purpose**  
+Validate that the VR application renders correctly on a remote server, and the VR headset updates in real time.  
 
-#### Requirements Verified  
+**Requirements Verified**  
 - **1**: VR Application Development  
 - **2**: Use an actual VR headset for the application  
 - **3**: Remote Rendering Implementation  
 
-#### Steps  
-1. Open the Unity VR test environment.  
+**Steps**  
+1. Launch the Unity VR test environment.  
 2. Connect the Oculus Quest 3 headset using ALVR.  
-3. Start the remote-rendering session.  
-4. Move the VR headset and confirm the camera movements in Unity.  
-5. Disconnect the VR headset and ensure the VR application continues rendering on the server at a stable frame rate (e.g., 60 FPS).  
+3. Initiate a remote-rendering session.  
+4. Move the VR headset and confirm corresponding camera movements in Unity.  
+5. Disconnect the headset and ensure the application continues rendering at a stable frame rate (e.g., 60 FPS).  
 
-#### Results  
-✅ The VR application rendered correctly, and camera movements were synced with the headset. Rendering continued seamlessly when the VR headset disconnected.  
+**Results**  
+✅ The VR application rendered correctly, camera movements synced, and rendering continued seamlessly after headset disconnection.  
 
 ---
 
 ### Test 2: Network Degradation and Performance Data Logging  
-#### Purpose  
-To test VR performance under simulated network latency and verify performance logging.  
+**Purpose**  
+Evaluate VR performance under simulated latency and verify that performance metrics are logged accurately.  
 
-#### Requirements Verified  
+**Requirements Verified**  
 - **4**: Network Degradation Simulation  
 - **5**: Performance Data Logging  
 - **6**: Data Analysis  
 
-#### Steps  
-1. Start the Unity test environment and connect the VR headset.  
-2. Use **Clumsy** to simulate latency increments: 50ms, 100ms, 150ms, and 200ms.  
-3. Move the headset and observe delays in frame updates.  
-4. Log latency, frame rates, and input delays in a JSON file.  
-5. Analyze the logs and generate graphs to identify trends.  
+**Steps**  
+1. Connect the Oculus Quest 3 headset to the Unity test environment.  
+2. Use **Clumsy** to simulate network latency at 50ms, 100ms, 150ms, and 200ms.  
+3. Perform basic VR movements and observe frame rate and input lag.  
+4. Log performance metrics (frame rates, input delay) to a JSON file.  
+5. Analyze and graph the results to identify trends between latency and VR performance.  
 
-#### Results  
-✅ Network latency successfully degraded performance, and JSON logs captured frame rate, latency, and input lag data. Graphs demonstrated the correlation between latency and performance.  
+**Results**  
+✅ Network degradation caused expected performance drops, and JSON logs captured latency, frame rates, and input delays. Graphs highlighted the correlation.  
 
 ---
 
 ### Test 3: Multiplayer and Client Identification  
-#### Purpose  
-To validate multiplayer functionality and user identification features.  
+**Purpose**  
+Validate multiplayer connectivity and client identification features.  
 
-#### Requirements Verified  
+**Requirements Verified**  
 - **9**: Multiplayer Feature Implementation  
 - **15**: Clients Identification  
 
-#### Steps  
-1. Launch the multiplayer Unity environment with two Oculus Quest headsets.  
-2. Connect both VR headsets to the session.  
-3. Verify that both users see each other and interact in the environment.  
-4. Implement color tags and name labels to identify clients.  
+**Steps**  
+1. Launch the multiplayer Unity environment.  
+2. Connect two Oculus Quest 3 headsets to the session.  
+3. Verify that both users can see and interact with each other.  
+4. Implement and test color tags and name labels to distinguish clients.  
 
-#### Results  
-✅ Two clients connected successfully, and identification features (name tags/colors) displayed correctly.  
+**Results**  
+✅ Multiplayer functionality worked seamlessly, and identification features (name tags and colors) displayed correctly.  
 
 ---
 
-### Test 4: Haptic Feedback and Haptic Map Controls  
-#### Purpose  
-To confirm the integration of haptic feedback and gesture-based map control.  
+### Test 4: Haptic Feedback and Gesture-Based Map Controls  
+**Purpose**  
+Verify the integration of haptic feedback and gesture-based map controls.  
 
-#### Requirements Verified  
+**Requirements Verified**  
 - **14**: Users get haptic feedback  
 - **16**: Haptic controls map movement  
 
-#### Steps  
-1. Connect the **Ultraleap Haptic Device** to the Unity test environment.  
-2. Simulate terrain with varying heights and observe tactile feedback.  
-3. Use haptic gestures to move the map around the environment.  
+**Steps**  
+1. Connect the **Ultraleap Haptic Device** to Unity.  
+2. Simulate various terrain heights and observe tactile feedback.  
+3. Implement gesture controls for moving the virtual map.  
+4. Test haptic responses and gesture precision for map movement.  
 
-#### Results  
-✅ Haptic feedback worked as intended, and tactile sensations varied with terrain height. Gestures successfully controlled the map’s movement.  
+**Results**  
+✅ Haptic feedback worked as intended, with varied tactile responses based on terrain. Gesture controls effectively manipulated the map.  
 
 ---
 
-### Test 5: Switching Between 1st and 3rd Person (Gestures Included)  
-#### Purpose  
-To verify switching between first and third-person perspectives using gestures.  
+### Test 5: Switching Between 1st and 3rd Person (With Gestures)  
+**Purpose**  
+Validate manual and gesture-based switching between first-person and third-person perspectives.  
 
-#### Requirements Verified  
+**Requirements Verified**  
 - **17**: Client needs to go between 1st and 3rd person  
 - **18**: 1st and 3rd person needs to be done with gestures  
 
-#### Steps  
-1. Implement both first-person and third-person camera views in Unity.  
-2. Assign a **gesture command** using the Ultraleap haptic device to trigger the camera switch.  
-3. Test the switch manually and through gestures.  
+**Steps**  
+1. Implement manual switching between first-person and third-person camera views.  
+2. Configure gestures using the Ultraleap Haptic Device to trigger the camera switch.  
+3. Test both manual and gesture-based switches for responsiveness and accuracy.  
 
-#### Results  
-✅ Switching between first and third-person views functioned as expected. Gestures successfully triggered the view switch with minimal observable latency.  
+**Results**  
+✅ Switching between first-person and third-person views worked accurately, and gesture-based commands performed reliably with minimal latency.  
 
 ---
 
 ### Test 6: VR and Haptic User Experience Under Latency  
-#### Purpose  
-To assess the combined impact of latency on user experience with both VR visuals and haptic feedback.  
+**Purpose**  
+Assess the combined impact of latency on user experience with VR visuals and haptic feedback.  
 
-#### Requirements Verified  
+**Requirements Verified**  
 - **20**: Haptic & VR user experience  
 
-#### Steps  
+**Steps**  
 1. Connect the VR headset and Ultraleap Haptic Device.  
-2. Use Clumsy to simulate network latency increments of 50ms, 100ms, and 200ms.  
-3. Have **at least 3 participants** interact with both VR visuals and haptic devices under simulated latency conditions.  
-4. Collect user feedback using questionnaires evaluating usability, task performance, and comfort.  
+2. Introduce simulated latency increments of 50ms, 100ms, and 200ms using **Clumsy**.  
+3. Have **3–5 participants** interact with the VR environment and haptic feedback simultaneously.  
+4. Collect user feedback on usability, motion sickness, and task performance.  
 
-#### Results  
-✅ Combined latency noticeably impacted user experience at 200ms. Users reported usability degradation beyond 100ms. Graphs confirmed the findings.
+**Results**  
+✅ Combined latency significantly affected user experience beyond 100ms. Feedback confirmed reduced usability at 200ms latency.  
 
 ---
 
 ## Summary and Conclusion  
 
 ### Summary  
-The test plan systematically verified all **Must Have** requirements and several **Should/Could** requirements. Each test addressed multiple product backlog items, ensuring efficient testing coverage. Results were collected, and any issues were resolved or noted for future iterations.  
+The test plan verified all **Must Have** requirements and addressed several **Should/Could** items. Each test was systematically executed, capturing performance data and user feedback for analysis.  
 
 ### Conclusion  
-- **Must Have Requirements**: ✅ Completed and verified through extensive testing.  
-- **Should/Could Requirements**: 🟡 Partially completed; pending minor refinements.  
-- **Haptic Feedback and Network Testing**: Successfully demonstrated responsiveness and limitations under varying conditions.  
+- **Must Have Requirements**: ✅ Fully validated.  
+- **Should/Could Requirements**: 🟡 Partially completed, pending refinements.  
+- **Haptic and VR Experience**: Combined tests demonstrated expected latency limitations, confirming thresholds for usability.  
 
-The project is on track, with critical functionalities fully tested and validated for stakeholder review. Future work will focus on refining haptic features and optimizing network performance to improve overall user experience.  
+The project is on schedule, with critical features validated and user feedback incorporated. Future efforts will focus on refining haptic integration and optimizing network performance.
 
 ---
