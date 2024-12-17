@@ -15,7 +15,7 @@ This experiment evaluates the impact of latency on VR user experience and task p
 
 #### Part 1: VR Latency Impact Testing  
 **Setup**  
-- **Hardware Used**: Oculus Meta Quest 3, Cloud-based VR system, and a standard laptop.  
+- **Hardware Used**: Oculus Meta Quest 3, a VR system, and a standard laptop.  
 - **Software Used**: ALVR for VR streaming, Unity for controlled latency simulation.  
 - **Measurement Tools**: Unity Profiler for input latency and frame timing, user feedback forms.  
 
