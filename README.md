@@ -1,6 +1,6 @@
 # VR and Haptic Cloud Integration Project
 
-Rever to [Research report](Deliverables-P56/Research-Report.md) for the main research document.
+Refer to [Research report](Deliverables-P56/Research-Report.md) for the main research document.
 
 ## Project Overview
 This repository contains the development, testing, and documentation for the **VR and Haptic Cloud Integration** project. The goal of this project is to combine **Virtual Reality (VR)** streaming with **haptic feedback** to create an immersive and interactive extended reality (XR) experience. We focus on:
