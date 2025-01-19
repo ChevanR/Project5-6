@@ -2,7 +2,7 @@
 
 ## Install guides
 ### ALVR  
-Install ALVR following the [guide](https://github.com/alvr-org/ALVR/wiki/Installation-guide#installation).
+Install ALVR following the [guide](https://github.com/alvr-org/ALVR/wiki/Installation-guide#installation).  
 The guide will also ask you to install SteamVR from [Steam](https://store.steampowered.com/app/250820/SteamVR/).
 
 

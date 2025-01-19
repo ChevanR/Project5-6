@@ -1,6 +1,6 @@
 # VR and Haptic Cloud Integration Project
 
-Refer to [Research report](Deliverables-P56/Research-Report.md) for the main research document.
+Refer to [Research report](Deliverables-P56/Research-Report.md) for the main research document.  
 Refer to [Usage guide](Deliverables-P56/Usage-guide.md) for all the guides you might need.
 
 ## Project Overview
