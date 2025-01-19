@@ -72,6 +72,12 @@ This changelog highlights the key milestones achieved between November 2024 and 
 
 # True Changelog (needs updates)
 
+### 
+
+### 2024-12-11
+- **Unity world**
+  - Start haptic feedback on height detection, using button invoking
+
 ### 2025-01-10
 - **Unity world**
   - Integrated VR camera into Haptic world
