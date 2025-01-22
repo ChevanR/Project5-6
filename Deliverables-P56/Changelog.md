@@ -68,3 +68,18 @@
 This changelog highlights the key milestones achieved between November 2024 and January 2025. The project was completed **ahead of schedule**, with all core functionalities tested and validated. The final MVP is polished, functional, and ready for stakeholder review.  
 
 ---
+
+
+# True Changelog (needs updates)
+
+### 
+
+### 2024-12-11
+- **Unity world**
+  - Start haptic feedback on height detection, using button invoking
+
+### 2025-01-10
+- **Unity world**
+  - Integrated VR camera into Haptic world
+  - Added colission checkers with the hand from the haptic device
+  - Start haptic feedback on colission detection and close it
