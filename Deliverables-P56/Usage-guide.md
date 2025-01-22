@@ -14,6 +14,9 @@ To download clumsy follow the link below.
 Source: https://jagt.github.io/clumsy/
 
 ### Unity
+Install Unity from https://unity.com/download.  
+You can download the world with all the packages and plugins from ...
+
 #### SteamVR plugin
 You can download the SteamVR plugin from [AssetStore](https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647).
 
