@@ -43,6 +43,13 @@ The setup consisted of:
   - Testers 1-2 used wired(TCP) connection, with Oculus Meta Quest 3
   - Testers 3-4 used wireless(UDP) connection, with VIVE Focus 3
   - Tester 1 used a localhost degradation, whilst Tester 2 was specifically for the AVLR streaming port (this impacts anything to do with FPS)
+- ALVR settings (All the settings that mostly matter, or have been changed):
+  - Resolution: 4288
+  - Preferred framerate: 90Hz
+  - Encoder preset: Speed
+  - Bitrate: 30Mbps Constant
+  - Adept to framerate: True
+  - Preferred codec: h264
 - The Lab on [Steam](https://store.steampowered.com/app/450390/The_Lab/) -- General movement in the lobby and using the bow to shoot balloons
 - Clumsy (Network degradation)
 - Laptop specs:
@@ -84,12 +91,24 @@ More info can be found [here](/Deliverables-P56/Usage-guide.md)
 | 300              | 3.5            | 4            | 4            | 2            | 4            |
 | 400              | 2.0            | 2            | 2            | 2            | 2            |
 
+### Bitrate
+Also users 3 and 4 have been tested on bitrate, this is harder to document or show since the low bitrate can happen at different times, but there are some boundaries that were found:
+**Artifacts** started appearing around 3800 KB/s.  
+**The usability limit** was found to be around 2600 KB/s.  
+**Crash limit** the simulation crashed at 1300 KB/s.  
+Note that values can be different for different protocols, settings or hardware used.
+
 ---
 
 ## Analysis Summary  
+### Latency
 - **Motion Sickness**: Stable for most users up to **300ms**; Tester 3 experienced discomfort starting at **100ms**.  
 - **Task Performance**: Noticeable degradation begins at **100ms latency**, with near failure beyond **200ms latency**.  
 - **Usability**: Decreased usability occurs beyond **150ms**, becoming unusable at **300ms latency**.  
+### Bitrate
+- **Artifacts**: Starting around **3800 KB/s**.  
+- **Usability limit**: Starting around **2600 KB/s**.  
+- **Crash limit**: Starting around **1300 KB/s**.  
 
 ---
 
