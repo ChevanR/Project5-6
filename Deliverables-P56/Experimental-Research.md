@@ -38,7 +38,7 @@ This experiment evaluates the impact of **network latency** on **VR user experie
 ## Results  
 See the json and html files [here](/Deliverables-P56/Degradation/output/)
 Users 1-4 where tested without using haptics.
-The setup consisted of:
+The setup consisted of:  
 - ALVR (VR streaming)
   - Testers 1-2 used wired(TCP) connection, with Oculus Meta Quest 3
   - Testers 3-4 used wireless(UDP) connection, with VIVE Focus 3
