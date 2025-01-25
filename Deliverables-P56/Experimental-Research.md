@@ -37,38 +37,53 @@ This experiment evaluates the impact of **network latency** on **VR user experie
 
 ## Results  
 
+Users 1-4 where tested without using haptics.
+The setup consisted of:
+- ALVR (VR streaming)
+  - Testers 1-2 used wired(TCP) connection, with Oculus Meta Quest 3
+  - Testers 3-4 used wireless(UDP) connection, with VIVE Focus 3
+  - Tester 1 used a localhost degradation, whilst Tester 2 was specifically for the AVLR streaming port (this impacts anything to do with FPS)
+- The Lab on [Steam](https://store.steampowered.com/app/450390/The_Lab/) -- General movement in the lobby and using the bow to shoot balloons
+- Clumsy (Network degradation)
+- Laptop specs:
+  - CPU: i7 12700h
+  - GPU: RTX A1000
+  - RAM: 32GB 4800MHZ
+
+
+
 ### Motion Sickness vs. Latency  
-| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
-|------------------|----------------|--------------|--------------|--------------|--------------|  
-| 0               | 10             | 10           | 10           | 10           | 10           |  
-| 50              | 10             | 10           | 10           | 10           | 10           |  
-| 100             | 9.25           | 10           | 10           | 7            | 10           |  
-| 150             | 9.0            | 10           | 10           | 7            | 10           |  
-| 200             | 8.25           | 10           | 10           | 7            | 10           |  
-| 300             | 8.25           | 10           | 10           | 7            | 10           |  
-| 400             | 8.25           | 10           | 10           | 3            | 10           |  
+| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |
+| ---------------- | -------------- | ------------ | ------------ | ------------ | ------------ |
+| 0                | 10             | 10           | 10           | 10           | 10           |
+| 50               | 10             | 10           | 10           | 10           | 10           |
+| 100              | 9.25           | 10           | 10           | 7            | 10           |
+| 150              | 9.0            | 10           | 10           | 7            | 10           |
+| 200              | 8.25           | 10           | 10           | 7            | 10           |
+| 300              | 8.25           | 10           | 10           | 7            | 10           |
+| 400              | 8.25           | 10           | 10           | 3            | 10           |
 
 ### Task Performance vs. Latency  
-| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
-|------------------|----------------|--------------|--------------|--------------|--------------|  
-| 0               | 10             | 10           | 10           | 10           | 10           |  
-| 50              | 9.75           | 10           | 10           | 9            | 9            |  
-| 100             | 7.5            | 8            | 8            | 6            | 8            |  
-| 150             | 5.5            | 6            | 5            | 4            | 7            |  
-| 200             | 4.5            | 4            | 4            | 4            | 6            |  
-| 300             | 3.25           | 2            | 3            | 4            | 4            |  
-| 400             | 2.0            | 2            | 2            | 2            | 2            |  
+| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |
+| ---------------- | -------------- | ------------ | ------------ | ------------ | ------------ |
+| 0                | 10             | 10           | 10           | 10           | 10           |
+| 50               | 9.75           | 10           | 10           | 9            | 9            |
+| 100              | 7.5            | 8            | 8            | 6            | 8            |
+| 150              | 5.5            | 6            | 5            | 4            | 7            |
+| 200              | 4.5            | 4            | 4            | 4            | 6            |
+| 300              | 3.25           | 2            | 3            | 4            | 4            |
+| 400              | 2.0            | 2            | 2            | 2            | 2            |
 
 ### Usability vs. Latency  
-| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |  
-|------------------|----------------|--------------|--------------|--------------|--------------|  
-| 0               | 10             | 10           | 10           | 10           | 10           |  
-| 50              | 9.25           | 10           | 10           | 7            | 10           |  
-| 100             | 8.75           | 9            | 9            | 7            | 10           |  
-| 150             | 7.75           | 8            | 7            | 4            | 8            |  
-| 200             | 6.0            | 6            | 6            | 4            | 6            |  
-| 300             | 3.5            | 4            | 4            | 2            | 4            |  
-| 400             | 2.0            | 2            | 2            | 2            | 2            |  
+| **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |
+| ---------------- | -------------- | ------------ | ------------ | ------------ | ------------ |
+| 0                | 10             | 10           | 10           | 10           | 10           |
+| 50               | 9.25           | 10           | 10           | 7            | 10           |
+| 100              | 8.75           | 9            | 9            | 7            | 10           |
+| 150              | 7.75           | 8            | 7            | 4            | 8            |
+| 200              | 6.0            | 6            | 6            | 4            | 6            |
+| 300              | 3.5            | 4            | 4            | 2            | 4            |
+| 400              | 2.0            | 2            | 2            | 2            | 2            |
 
 ---
 
