@@ -167,4 +167,4 @@ For word explanation see [Value explanation](#Value-explanation)
   - Contains the Bitrate as function of the Network latency
 
 ### Questionnaire JSON output
-Refer to (questionnaire usage guide)[#Questionnaire] for the value explanations
+Refer to [questionnaire usage guide](#Questionnaire) for the value explanations
