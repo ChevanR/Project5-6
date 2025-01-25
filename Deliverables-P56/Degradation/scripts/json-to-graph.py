@@ -63,21 +63,27 @@ def plot_data(latency, other_data, y_label, title):
 def prepare_datasets(filepath):
     data = load_data_from_json(filepath)
     datasets = {
-        "total_latency_ms": [], "network_latency_ms": [],
-        "client_frame_rate": [], "server_frame_rate": [], "bitrate_MBps": []
-    }
-
-    for entry in data:
-        event_data = entry['event_type']['data']
-        if entry['event_type']['id'] == "GraphStatistics":
-            datasets["total_latency_ms"].append(
-                event_data['total_pipeline_latency_s'] * 1000)
-            datasets["network_latency_ms"].append(
-                event_data['network_s'] * 1000)
-            datasets["client_frame_rate"].append(event_data['client_fps'])
-            datasets["server_frame_rate"].append(event_data['server_fps'])
-            datasets["bitrate_MBps"].append(
-                event_data['actual_bitrate_bps'] / (1024**2))
+            "total_latency_ms": [], "network_latency_ms": [],
+            "client_frame_rate": [], "server_frame_rate": [], "bitrate_MBps": []
+        }
+    if input("Enter 1 for raw data and 2 for downsized data upload: ") == "2":
+        datasets["total_latency_ms"] = data.get("total_latency_ms", [])
+        datasets["network_latency_ms"] = data.get("network_latency_ms", [])
+        datasets["client_frame_rate"] = data.get("client_frame_rate", [])
+        datasets["server_frame_rate"] = data.get("server_frame_rate", [])
+        datasets["bitrate_MBps"] = data.get("bitrate_MBps", [])
+    else:
+        for entry in data:
+            event_data = entry['event_type']['data']
+            if entry['event_type']['id'] == "GraphStatistics":
+                datasets["total_latency_ms"].append(
+                    event_data['total_pipeline_latency_s'] * 1000)
+                datasets["network_latency_ms"].append(
+                    event_data['network_s'] * 1000)
+                datasets["client_frame_rate"].append(event_data['client_fps'])
+                datasets["server_frame_rate"].append(event_data['server_fps'])
+                datasets["bitrate_MBps"].append(
+                    event_data['actual_bitrate_bps'] / (1024**2))
 
     return datasets
 
