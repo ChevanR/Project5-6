@@ -36,7 +36,7 @@ This experiment evaluates the impact of **network latency** on **VR user experie
 ---
 
 ## Results  
-
+See the json and html files [here](/Deliverables-P56/Degradation/output/)
 Users 1-4 where tested without using haptics.
 The setup consisted of:
 - ALVR (VR streaming)
@@ -49,8 +49,7 @@ The setup consisted of:
   - CPU: i7 12700h
   - GPU: RTX A1000
   - RAM: 32GB 4800MHZ
-
-
+More info can be found [here](/Deliverables-P56/Usage-guide.md)
 
 ### Motion Sickness vs. Latency  
 | **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |
@@ -63,7 +62,7 @@ The setup consisted of:
 | 300              | 8.25           | 10           | 10           | 7            | 10           |
 | 400              | 8.25           | 10           | 10           | 3            | 10           |
 
-### Task Performance vs. Latency  
+### Task Performance(Hitting target with bow) vs. Latency  
 | **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |
 | ---------------- | -------------- | ------------ | ------------ | ------------ | ------------ |
 | 0                | 10             | 10           | 10           | 10           | 10           |
@@ -74,7 +73,7 @@ The setup consisted of:
 | 300              | 3.25           | 2            | 3            | 4            | 4            |
 | 400              | 2.0            | 2            | 2            | 2            | 2            |
 
-### Usability vs. Latency  
+### Overall Usability vs. Latency  
 | **Latency (ms)** | **Avg. Score** | **Tester 1** | **Tester 2** | **Tester 3** | **Tester 4** |
 | ---------------- | -------------- | ------------ | ------------ | ------------ | ------------ |
 | 0                | 10             | 10           | 10           | 10           | 10           |
