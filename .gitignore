@@ -1,0 +1,16 @@
+# Ignore everything
+*
+
+# Allow the .gitignore file itself
+!.gitignore
+
+# Allow the Assets folder
+!/Assets
+
+# Allow the Scenes and Scripts subfolders
+!/Assets/Scenes
+!/Assets/Scripts
+
+# Allow all files inside Scenes and Scripts
+!/Assets/Scenes/**
+!/Assets/Scripts/**
