@@ -10,7 +10,10 @@
 # Allow the Scenes and Scripts subfolders
 !/Assets/Scenes
 !/Assets/Scripts
+!/Assets/Resources
+!/Assets/Resources/json
 
 # Allow all files inside Scenes and Scripts
 !/Assets/Scenes/**
 !/Assets/Scripts/**
+!/Assets/Resources/json/**
