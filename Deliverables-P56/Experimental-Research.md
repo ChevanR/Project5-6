@@ -56,6 +56,7 @@ The setup consisted of:
   - CPU: i7 12700h
   - GPU: RTX A1000
   - RAM: 32GB 4800MHZ
+
 More info can be found [here](/Deliverables-P56/Usage-guide.md)
 
 ### Motion Sickness vs. Latency  
