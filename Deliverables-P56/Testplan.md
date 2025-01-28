@@ -58,19 +58,28 @@ To test different headsets, you can use different headsets.
 #### Results
 
 ### Test 2
-Requirements: 3
+Requirements: 3  
 Follow 1,2,4 from the global setup. 
 Now turn off ALVR on the VR headset, and you should see that the game runs on the laptop and thus remote.  
 
 #### Results
 
 ### Test 3
-Requirements: 4
-Follow 1,2,3.1,4
+Requirements: 4  
+Follow 1,2,3.1,3.5,4
+Test with multiple different delays and you can see how to impact the feeling.
 
 #### Results
 
 ### Test 4
-Requirements: 5,6
+Requirements: 5,6,7  
+Follow 1,2,3.2,4  
+After having created the logging file follow 3.3
 
+#### Results
 
+### Test 5
+Requirements: 18  
+Follow 1,3.4,2,4  
+
+#### Results
