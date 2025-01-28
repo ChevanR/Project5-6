@@ -28,9 +28,9 @@ You can follow the guide from [Ultraleap](https://docs.ultraleap.com/xr-and-tabl
 ## Usage guides
 ### ALVR
 - Start ALVR
-- Launch the needed version
+- Launch the needed version  
 ![](/Deliverables-P56/Images/launch-alvr.png)
-- Click start SteamVR if it doesn't start automatically
+- Click start SteamVR if it doesn't start automatically  
 ![](/Deliverables-P56/Images/steamvr-disconnect.png)
 - Make sure the client and server are on the same network/VPN
 - See if the client is in the autodiscovery otherwise ``Add Device Manually`` enter the hostname and ip that you see on the client(if you have opened the ALVR app there) and press ``save``. It should now autoconnect.
@@ -38,11 +38,11 @@ You can follow the guide from [Ultraleap](https://docs.ultraleap.com/xr-and-tabl
 
 ### Clumsy
 - Start Clumsy
-- Select the preset "udp ipv4 against specific ip"
+- Select the preset "udp ipv4 against specific ip"  
 ![](/Deliverables-P56/Images/clumsy-preset.png)
-- Enter the client IP found in ALVR fill in the "ip.DstAddr" and "ip.SrcAddr" with this ip
+- Enter the client IP found in ALVR fill in the "ip.DstAddr" and "ip.SrcAddr" with this ip  
 ![](/Deliverables-P56/Images/clumsy-ip.png)
-- Press start and introduce the needed degradation
+- Press start and introduce the needed degradation  
 ![](/Deliverables-P56/Images/clumsy-start.png) 
   
 ### Logging script
@@ -57,7 +57,7 @@ To downsize the data from the [logging script](#Logging-script), as it can be qu
 
 ### Unity Haptic delay
 In the loaded Unity world, open the scenes folder and load the scene called minimal.  
-Then Under ``minimal>Player>UltraleapDevice Left`` there should be an attached script called ``Custom Hap E Device Manager (Script)`` which has a parameter called ``Delay_in_seconds`` its default value is 0, and changing this should introduce more latency for the haptic feedback.
+Then Under ``minimal>Player>UltraleapDevice Left`` there should be an attached script called ``Custom Hap E Device Manager (Script)`` which has a parameter called ``Delay_in_seconds`` its default value is 0, and changing this should introduce more latency for the haptic feedback.  
 ![](/Deliverables-P56/Images/haptic-delay.png)
 
 ### Questionnaire
