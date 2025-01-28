@@ -23,7 +23,6 @@ namespace HapE.Unity
         [Tooltip("If enabled, we attempt to connect to a device on startup")]
         public bool autoConnect = true;
         public Context ctx;
-        Dictionary<int, Tuple<Vector2, bool>> items = new Dictionary<int, Tuple<Vector2, bool>>();
 
         [SerializeField]
         private List<DeviceInfo> availableDevices;
@@ -74,6 +73,8 @@ namespace HapE.Unity
         public Transform trackerOrigin;
         public bool loadTrackerOriginFromJSON = true;
 
+        
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -106,6 +107,7 @@ namespace HapE.Unity
             }
             leapServiceProvider.GetLeapController().FrameReady += FrameReady;
 
+            // Start the custom coroutine
             StartCoroutine(RunCoroutine(0.01f));
         }
 
@@ -495,28 +497,7 @@ namespace HapE.Unity
             }
         }
 
-        public void PlayXYJSON(float x, float y, string json)
-        {
-            //string json =
-            //    "{\r\n  \"version\": 2,\r\n  \"format_version\": 1,\r\n  \"primitive\": {\r\n    \"draw_frequency\": 127,\r\n    \"A\": 0.01,\r\n    \"B\": 0.01,\r\n    \"a\": 1.0,\r\n    \"b\": 1.0,\r\n    \"max_t\": 6.28318548,\r\n    \"d\": 1.57079637,\r\n    \"k\": 0.0\r\n  },\r\n  \"animator\": {\r\n    \"enabled\": false,\r\n    \"T1a1_switch_count\": 0,\r\n    \"T1a2_switch_count\": 0\r\n  },\r\n  \"envelope\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.01\r\n      },\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 1,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"painter\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"x\": 0.00233333115,\r\n        \"y\": -0.02663334,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.01\r\n      },\r\n      {\r\n        \"x\": 0.00200001,\r\n        \"y\": 0.0616999753,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 1,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"fixation_mode\": 0,\r\n  \"fixation_offset\": {\r\n    \"x\": 0.0,\r\n    \"y\": 0.0,\r\n    \"z\": 0.0,\r\n    \"magnitude\": 0.0,\r\n    \"sqrMagnitude\": 0.0\r\n  },\r\n  \"hapticName\": \"NewHaptic\",\r\n  \"brushName\": \"Circle\"\r\n}";
-
-            JObject jsonObject = JObject.Parse(json);
-            JArray nodes = (JArray)jsonObject["painter"]["nodes"];
-            if (nodes.Count > 0)
-            {
-                JObject firstNode = (JObject)nodes[0];
-                firstNode["x"] = x;
-                firstNode["y"] = y;
-                JObject sNode = (JObject)nodes[1];
-                sNode["x"] = x;
-                sNode["y"] = y;
-            }
-            string updatedJson = jsonObject.ToString(Formatting.Indented);
-            //Debug.Log("x: " + x + ", y:" + y);
-            //PlayHapEJSONString(updatedJson);
-            hapticDevice.HapE.V3LoadJSONString(updatedJson);
-            hapticDevice.HapE.Start();
-        }
+       
 
         /// <summary>
         /// Plays a Hap-E haptic definition from a string containing the Hap-e JSON contents.
@@ -604,228 +585,6 @@ namespace HapE.Unity
             return;
         }
 
-        // Add or update an entry in the dictionary
-        public void UpdateValue(int id, Vector2 value)
-        {
-            if (id == 0) return; // Ignore ID 0
-
-            if (!items.ContainsKey(id))
-            {
-                // Add a new entry if it doesn't exist
-                items.Add(id, new Tuple<Vector2, bool>(value, false));
-            }
-            else
-            {
-                // Update the existing entry
-                items[id] = new Tuple<Vector2, bool>(value, items[id].Item2);
-            }
-        }
-
-        // Enable an item (set its active state to true)
-        public void Enable(int id)
-        {
-            if (id == 0) return; // Ignore ID 0
-
-            if (items.ContainsKey(id))
-            {
-                // Retrieve the current Vector2 value
-                Vector2 currentVector = items[id].Item1;
-
-                // Replace the entry with a new Tuple, setting the bool to true
-                items[id] = new Tuple<Vector2, bool>(currentVector, true);
-            }
-            else
-            {
-                // Optionally handle cases where the item does not exist
-                Debug.LogWarning($"Item with ID {id} does not exist.");
-            }
-        }
-
-        // Disable (deactivate) an item (set its active state to false)
-        public void Disable(int id)
-        {
-            if (id == 0) return; // Ignore ID 0
-
-            if (items.ContainsKey(id))
-            {
-                // Retrieve the current Vector2 value
-                Vector2 currentVector = items[id].Item1;
-
-                // Replace the entry with a new Tuple, setting the bool to false
-                items[id] = new Tuple<Vector2, bool>(currentVector, false);
-            }
-            else
-            {
-                // Optionally handle cases where the item does not exist
-                Debug.LogWarning($"Item with ID {id} does not exist.");
-            }
-        }
-
-        // Custom SHizz
-        /*
-         *  
-  "fixation_mode": 0,
-  "fixation_offset": {
-    "x": 0.0,
-    "y": 0.0,
-    "z": 0.0,
-    "magnitude": 0.0,
-    "sqrMagnitude": 0.0
-  }
-         */
-        public void PlayStaticPointAtCoordinates(float x, float y)
-        {
-            ResetHapEState();
-
-            // HapEData
-            HapEData data = new();
-
-            // Primitive
-            data.primitive = new()
-            {
-                A = 0.01f,
-                B = 0.01f,
-                a = 1,
-                b = 1,
-                max_t = 6.28318548f,
-                d = 1.5707963f,
-                k = 0,
-                draw_frequency = 127
-            };
-
-
-            // Animator
-            data.animator = new()
-            {
-                enabled = false,
-                T1a1_switch_count = 0,
-                T1a2_switch_count = 0
-            };
-
-            // Painter
-            hapticDevice.HapE.V3SendCommand(HapE.V3Command.EnablePainter, 1);
-            PainterNode point;
-            point.x = x;
-            point.y = y;
-            point.x_scale = 1f;
-            point.y_scale = 1f;
-            point.z_rotation = 0;
-
-            hapticDevice.HapE.V3PainterUpdateNode(0, point.x, point.y, point.z_rotation, point.x_scale, point.y_scale, 1f);
-            hapticDevice.HapE.V3PainterSetLength(1);
-            hapticDevice.HapE.V3PainterSetRepeatCount(0);
-            hapticDevice.HapE.V3PainterSetMode(0);
-
-            // Envelope
-
-            data.envelope = new()
-            {
-                nodes = new(),
-                enabled = true
-            };
-
-            EnvelopeNode node = new()
-            {
-                t = 1.0f,
-                intensity = 1.0f
-            };
-            data.envelope.nodes.Add(node);
-
-            EnvelopeNode node2 = new()
-            {
-                t = 0.0f,
-                intensity = 1.0f
-            };
-            data.envelope.nodes.Add(node2);
-
-            data.envelope.mode = 0;
-            data.envelope.length = 2;
-            data.envelope.repeat_count = 0;
-
-            // Fixation
-            data.fixation_mode = 0;
-            data.fixation_offset = new()
-            {
-                x = 0.0f,
-                y = 0.0f,
-                z = 0.0f
-            };
-
-
-            data.hapticName = "CUSTOM";
-            data.brushName = "Circle";
-
-            SetEnvelopeNodesFromHapEData(data);
-            SetAnimatorTransformsFromHapEData(data);
-            SetPrimitivePropertiesFromHapEData(data);
-
-            hapticDevice.HapE.Start(softValue: SoftStartStopValue);
-        }
-
-        private IEnumerator RunCoroutine(float interval)
-        {
-            //PlayHapEJSON("Assets/Resources/json/middle-finger.json");
-            //PlayHapEJSONString("{\r\n  \"version\": 2,\r\n  \"format_version\": 1,\r\n  \"primitive\": {\r\n    \"draw_frequency\": 127.957527,\r\n    \"A\": 0.009950485,\r\n    \"B\": 0.009950485,\r\n    \"a\": 1.0,\r\n    \"b\": 1.0,\r\n    \"max_t\": 6.28318548,\r\n    \"d\": 1.57079637,\r\n    \"k\": 0.0\r\n  },\r\n  \"animator\": {\r\n    \"enabled\": false,\r\n    \"T1a1_switch_count\": 0,\r\n    \"T1a2_switch_count\": 0\r\n  },\r\n  \"envelope\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 1.0\r\n      },\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 0,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"painter\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"x\": 0.0009999871,\r\n        \"y\": 0.07936666,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 0,\r\n    \"length\": 1,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"fixation_mode\": 0,\r\n  \"fixation_offset\": {\r\n    \"x\": 0.0,\r\n    \"y\": 0.0,\r\n    \"z\": 0.0,\r\n    \"magnitude\": 0.0,\r\n    \"sqrMagnitude\": 0.0\r\n  },\r\n  \"hapticName\": \"NewHaptic\",\r\n  \"brushName\": \"Circle\",\r\n  \"audioFilename\": \"\",\r\n  \"presetName\": \"\"\r\n}");
-            //PlayHapEJSON("Assets/Resources/json/palm.json");
-            //yield break;
-            //string json = "{\r\n  \"version\": 2,\r\n  \"format_version\": 1,\r\n  \"primitive\": {\r\n    \"draw_frequency\": 127,\r\n    \"A\": 0.02,\r\n    \"B\": 0.02,\r\n    \"a\": 1.0,\r\n    \"b\": 1.0,\r\n    \"max_t\": 6.28318548,\r\n    \"d\": 1.57079637,\r\n    \"k\": 0.0\r\n  },\r\n  \"animator\": {\r\n    \"enabled\": false,\r\n    \"T1a1_switch_count\": 0,\r\n    \"T1a2_switch_count\": 0\r\n  },\r\n  \"envelope\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 1.0\r\n      },\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 0,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"painter\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"x\": 0.0,\r\n        \"y\": -0.0383000039,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 0,\r\n    \"length\": 1,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"fixation_mode\": 0,\r\n  \"fixation_offset\": {\r\n    \"x\": 0.0,\r\n    \"y\": 0.0,\r\n    \"z\": 0.0,\r\n    \"magnitude\": 0.0,\r\n    \"sqrMagnitude\": 0.0\r\n  },\r\n  \"hapticName\": \"NewHaptic\",\r\n  \"brushName\": \"Circle\",\r\n  \"audioFilename\": \"\",\r\n  \"presetName\": \"\"\r\n}";
-            string json
-                = "{\r\n  \"version\": 2,\r\n  \"format_version\": 1,\r\n  \"primitive\": {\r\n    \"draw_frequency\": 127,\r\n    \"A\": 0.01,\r\n    \"B\": 0.01,\r\n    \"a\": 1.0,\r\n    \"b\": 1.0,\r\n    \"max_t\": 6.28318548,\r\n    \"d\": 1.57079637,\r\n    \"k\": 0.0\r\n  },\r\n  \"animator\": {\r\n    \"enabled\": false,\r\n    \"T1a1_switch_count\": 0,\r\n    \"T1a2_switch_count\": 0\r\n  },\r\n  \"envelope\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.01\r\n      },\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 1,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"painter\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"x\": 0.00233333115,\r\n        \"y\": -0.02663334,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.01\r\n      },\r\n      {\r\n        \"x\": 0.00200001,\r\n        \"y\": 0.0616999753,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 1,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"fixation_mode\": 0,\r\n  \"fixation_offset\": {\r\n    \"x\": 0.0,\r\n    \"y\": 0.0,\r\n    \"z\": 0.0,\r\n    \"magnitude\": 0.0,\r\n    \"sqrMagnitude\": 0.0\r\n  },\r\n  \"hapticName\": \"NewHaptic\",\r\n  \"brushName\": \"Circle\"\r\n}";
-
-            Boolean last_palm = false;
-            while (true) // Infinite loop
-            {
-                // Create a copy of the dictionary for safe iteration
-                Dictionary<int, Tuple<Vector2, bool>> _items = new Dictionary<int, Tuple<Vector2, bool>>(items);
-                Boolean check = false;
-
-                if ((_items.ContainsKey(69) && _items[69].Item2))
-                {
-                    check = true;
-                    if (!last_palm)
-                    {
-                        Debug.Log("Palm start");
-                        StopHaptics();
-                        PlayHapEJSON("Assets/Resources/json/palm.json");
-                    }
-                    last_palm = true;
-                    yield return new WaitForSeconds(interval * 0.01f);
-                }
-                else
-                {
-                    if (last_palm)
-                    {
-                        last_palm = false;
-                        Debug.Log("Palm stop");
-                        StopHaptics();
-                    }
-
-                    //foreach (KeyValuePair<int, Tuple<Vector2, bool>> entry in _items)
-                    //{
-                    //    // Extract the Vector2 and Boolean from the Tuple
-                    //    Vector2 position = entry.Value.Item1;
-                    //    bool isActive = entry.Value.Item2;
-
-                    //    // Process only active entries
-                    //    if (isActive)
-                    //    {
-                    //        check = true;
-                    //        StopHaptics();
-                    //        // Call your processing method with the position values
-                    //        PlayXYJSON(position.x, position.y, json);
-                    //        //Debug.Log($"Processed active item with ID: {entry.Key}, X: {position.x}, Y: {position.y}");
-                    //    }
-
-                    //    // Wait for the specified delay before processing the next value
-                    //    yield return new WaitForSeconds(interval * 8);
-                    //}
-                }
-                //ResetHapEState();
-                if (!check) StopHaptics();
-                // Wait for the specified interval before looping again
-                yield return new WaitForSeconds(interval * 0.01f);
-            }
-        }
 
         public void SetPlaybackRepeatCount(int repeatCount)
         {
@@ -1117,5 +876,248 @@ namespace HapE.Unity
             }
         }
         #endregion
+
+        /// <summary>
+        /// CUSTOM Code below here
+        /// </summary>
+        /// 
+        Dictionary<int, Tuple<Vector2, bool>> items = new Dictionary<int, Tuple<Vector2, bool>>();
+        [SerializeField] float delay_in_seconds = 0.0f;
+
+        // Coroutine that checks if the palm it hitting the object to play haptic feedback
+        private IEnumerator RunCoroutine(float interval)
+        {
+            // Finger haptic feedback json
+            //string json
+            //    = "{\r\n  \"version\": 2,\r\n  \"format_version\": 1,\r\n  \"primitive\": {\r\n    \"draw_frequency\": 127,\r\n    \"A\": 0.01,\r\n    \"B\": 0.01,\r\n    \"a\": 1.0,\r\n    \"b\": 1.0,\r\n    \"max_t\": 6.28318548,\r\n    \"d\": 1.57079637,\r\n    \"k\": 0.0\r\n  },\r\n  \"animator\": {\r\n    \"enabled\": false,\r\n    \"T1a1_switch_count\": 0,\r\n    \"T1a2_switch_count\": 0\r\n  },\r\n  \"envelope\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.01\r\n      },\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 1,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"painter\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"x\": 0.00233333115,\r\n        \"y\": -0.02663334,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.01\r\n      },\r\n      {\r\n        \"x\": 0.00200001,\r\n        \"y\": 0.0616999753,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 1,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"fixation_mode\": 0,\r\n  \"fixation_offset\": {\r\n    \"x\": 0.0,\r\n    \"y\": 0.0,\r\n    \"z\": 0.0,\r\n    \"magnitude\": 0.0,\r\n    \"sqrMagnitude\": 0.0\r\n  },\r\n  \"hapticName\": \"NewHaptic\",\r\n  \"brushName\": \"Circle\"\r\n}";
+
+            Boolean last_palm = false;
+            while (true) // Infinite loop
+            {
+                // Create a copy of the dictionary for safe iteration
+                Dictionary<int, Tuple<Vector2, bool>> _items = new Dictionary<int, Tuple<Vector2, bool>>(items);
+                Boolean check = false;
+
+                if ((_items.ContainsKey(69) && _items[69].Item2))
+                {
+                    check = true;
+                    if (!last_palm)
+                    {
+                        Debug.Log("Palm start");
+                        StopHaptics();
+                        PlayHapEJSON("Assets/Resources/json/palm.json");
+                    }
+                    last_palm = true;
+                    yield return new WaitForSeconds(interval * 0.01f);
+                    yield return new WaitForSeconds(delay_in_seconds);
+                }
+                else
+                {
+                    if (last_palm)
+                    {
+                        last_palm = false;
+                        Debug.Log("Palm stop");
+                        StopHaptics();
+                    }
+
+                    // // Finger haptic feedback
+                    //foreach (KeyValuePair<int, Tuple<Vector2, bool>> entry in _items)
+                    //{
+                    //    // Extract the Vector2 and Boolean from the Tuple
+                    //    Vector2 position = entry.Value.Item1;
+                    //    bool isActive = entry.Value.Item2;
+
+                    //    // Process only active entries
+                    //    if (isActive)
+                    //    {
+                    //        check = true;
+                    //        StopHaptics();
+                    //        // Call your processing method with the position values
+                    //        PlayXYJSON(position.x, position.y, json);
+                    //        //Debug.Log($"Processed active item with ID: {entry.Key}, X: {position.x}, Y: {position.y}");
+                    //    }
+
+                    //    // Wait for the specified delay before processing the next value
+                    //    yield return new WaitForSeconds(interval * 8);
+                    //}
+                }
+                //ResetHapEState();
+                if (!check) StopHaptics();
+                // Wait for the specified interval before looping again
+                yield return new WaitForSeconds(interval * 0.01f);
+            }
+        }
+
+        // Function to play haptic feedback at x,y coord using json as string
+        public void PlayXYJSON(float x, float y, string json)
+        {
+            // Load default json if not given
+            if (string.IsNullOrEmpty(json)) {
+                json ="{\r\n  \"version\": 2,\r\n  \"format_version\": 1,\r\n  \"primitive\": {\r\n    \"draw_frequency\": 127,\r\n    \"A\": 0.01,\r\n    \"B\": 0.01,\r\n    \"a\": 1.0,\r\n    \"b\": 1.0,\r\n    \"max_t\": 6.28318548,\r\n    \"d\": 1.57079637,\r\n    \"k\": 0.0\r\n  },\r\n  \"animator\": {\r\n    \"enabled\": false,\r\n    \"T1a1_switch_count\": 0,\r\n    \"T1a2_switch_count\": 0\r\n  },\r\n  \"envelope\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.01\r\n      },\r\n      {\r\n        \"intensity\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 1,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"painter\": {\r\n    \"enabled\": true,\r\n    \"nodes\": [\r\n      {\r\n        \"x\": 0.00233333115,\r\n        \"y\": -0.02663334,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.01\r\n      },\r\n      {\r\n        \"x\": 0.00200001,\r\n        \"y\": 0.0616999753,\r\n        \"z_rotation\": 0.0,\r\n        \"x_scale\": 1.0,\r\n        \"y_scale\": 1.0,\r\n        \"t\": 0.0\r\n      }\r\n    ],\r\n    \"mode\": 1,\r\n    \"length\": 2,\r\n    \"repeat_count\": 0\r\n  },\r\n  \"fixation_mode\": 0,\r\n  \"fixation_offset\": {\r\n    \"x\": 0.0,\r\n    \"y\": 0.0,\r\n    \"z\": 0.0,\r\n    \"magnitude\": 0.0,\r\n    \"sqrMagnitude\": 0.0\r\n  },\r\n  \"hapticName\": \"NewHaptic\",\r\n  \"brushName\": \"Circle\"\r\n}";
+            }
+
+            JObject jsonObject = JObject.Parse(json);
+            JArray nodes = (JArray)jsonObject["painter"]["nodes"];
+            if (nodes.Count > 0)
+            {
+                JObject firstNode = (JObject)nodes[0];
+                firstNode["x"] = x;
+                firstNode["y"] = y;
+                JObject sNode = (JObject)nodes[1];
+                sNode["x"] = x;
+                sNode["y"] = y;
+            }
+            string updatedJson = jsonObject.ToString(Formatting.Indented);
+            hapticDevice.HapE.V3LoadJSONString(updatedJson);
+            hapticDevice.HapE.Start();
+        }
+
+        // Add or update an entry in the dictionary
+        public void UpdateValue(int id, Vector2 value)
+        {
+            if (id == 0) return; // Ignore ID 0
+
+            if (!items.ContainsKey(id))
+            {
+                // Add a new entry if it doesn't exist
+                items.Add(id, new Tuple<Vector2, bool>(value, false));
+            }
+            else
+            {
+                // Update the existing entry
+                items[id] = new Tuple<Vector2, bool>(value, items[id].Item2);
+            }
+        }
+
+        // Enable an item (set its active state to true)
+        public void Enable(int id)
+        {
+            if (id == 0) return; // Ignore ID 0
+
+            if (items.ContainsKey(id))
+            {
+                // Retrieve the current Vector2 value
+                Vector2 currentVector = items[id].Item1;
+
+                // Replace the entry with a new Tuple, setting the bool to true
+                items[id] = new Tuple<Vector2, bool>(currentVector, true);
+            }
+            else
+            {
+                // Optionally handle cases where the item does not exist
+                Debug.LogWarning($"Item with ID {id} does not exist.");
+            }
+        }
+
+        // Disable (deactivate) an item (set its active state to false)
+        public void Disable(int id)
+        {
+            if (id == 0) return; // Ignore ID 0
+
+            if (items.ContainsKey(id))
+            {
+                // Retrieve the current Vector2 value
+                Vector2 currentVector = items[id].Item1;
+
+                // Replace the entry with a new Tuple, setting the bool to false
+                items[id] = new Tuple<Vector2, bool>(currentVector, false);
+            }
+            else
+            {
+                // Optionally handle cases where the item does not exist
+                Debug.LogWarning($"Item with ID {id} does not exist.");
+            }
+        }
+
+        // Function to do haptic at specific coord without json (does not work)
+        //public void PlayStaticPointAtCoordinates(float x, float y)
+        //{
+        //    ResetHapEState();
+
+        //    // HapEData
+        //    HapEData data = new();
+
+        //    // Primitive
+        //    data.primitive = new()
+        //    {
+        //        A = 0.01f,
+        //        B = 0.01f,
+        //        a = 1,
+        //        b = 1,
+        //        max_t = 6.28318548f,
+        //        d = 1.5707963f,
+        //        k = 0,
+        //        draw_frequency = 127
+        //    };
+
+
+        //    // Animator
+        //    data.animator = new()
+        //    {
+        //        enabled = false,
+        //        T1a1_switch_count = 0,
+        //        T1a2_switch_count = 0
+        //    };
+
+        //    // Painter
+        //    hapticDevice.HapE.V3SendCommand(HapE.V3Command.EnablePainter, 1);
+        //    PainterNode point;
+        //    point.x = x;
+        //    point.y = y;
+        //    point.x_scale = 1f;
+        //    point.y_scale = 1f;
+        //    point.z_rotation = 0;
+
+        //    hapticDevice.HapE.V3PainterUpdateNode(0, point.x, point.y, point.z_rotation, point.x_scale, point.y_scale, 1f);
+        //    hapticDevice.HapE.V3PainterSetLength(1);
+        //    hapticDevice.HapE.V3PainterSetRepeatCount(0);
+        //    hapticDevice.HapE.V3PainterSetMode(0);
+
+        //    // Envelope
+
+        //    data.envelope = new()
+        //    {
+        //        nodes = new(),
+        //        enabled = true
+        //    };
+
+        //    EnvelopeNode node = new()
+        //    {
+        //        t = 1.0f,
+        //        intensity = 1.0f
+        //    };
+        //    data.envelope.nodes.Add(node);
+
+        //    EnvelopeNode node2 = new()
+        //    {
+        //        t = 0.0f,
+        //        intensity = 1.0f
+        //    };
+        //    data.envelope.nodes.Add(node2);
+
+        //    data.envelope.mode = 0;
+        //    data.envelope.length = 2;
+        //    data.envelope.repeat_count = 0;
+
+        //    // Fixation
+        //    data.fixation_mode = 0;
+        //    data.fixation_offset = new()
+        //    {
+        //        x = 0.0f,
+        //        y = 0.0f,
+        //        z = 0.0f
+        //    };
+
+
+        //    data.hapticName = "CUSTOM";
+        //    data.brushName = "Circle";
+
+        //    SetEnvelopeNodesFromHapEData(data);
+        //    SetAnimatorTransformsFromHapEData(data);
+        //    SetPrimitivePropertiesFromHapEData(data);
+
+        //    hapticDevice.HapE.Start(softValue: SoftStartStopValue);
+        //}
+
     }
 }

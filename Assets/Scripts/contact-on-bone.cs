@@ -8,15 +8,14 @@ public class FingerContactHandler : MonoBehaviour
     private CustomHapEDeviceManager hapEDeviceManager;
     [SerializeField] public string jsonFileName;
     private Vector3 handPos;
-    // This method will be triggered during contact
-
-    // Trigger event for detecting contact (when IsTrigger is true)
+    // Trigger event for detecting contact
     private void OnTriggerEnter(Collider other)
     {
         // Trigger OnContact when touching any object
         hapEDeviceManager.Enable(id);
     }
 
+    // Update the position of the hand, based on the relative pos added with an offset to make it better
     private void Update()
     {
         Vector3 point = transform.position;
@@ -25,6 +24,7 @@ public class FingerContactHandler : MonoBehaviour
         hapEDeviceManager.UpdateValue(id, relPos);
     }
 
+    // Trigger event for detecting losing contact
     private void OnTriggerExit()
     {
         hapEDeviceManager.Disable(id);
@@ -33,6 +33,7 @@ public class FingerContactHandler : MonoBehaviour
 
     private void Start()
     {
+        // Try to find the hapEDeviceManager that manages this contact bone
         if (hapEDeviceManager == null)
         {
             // Safely navigate through the parent hierarchy

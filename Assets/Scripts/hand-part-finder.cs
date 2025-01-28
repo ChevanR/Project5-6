@@ -42,8 +42,6 @@ public class hand_part_finder : MonoBehaviour
             yield return null; // Wait for the next frame
         }
 
-        //Debug.Log(handContactBones);
-
         // Identify palm and finger bones
         bool palmFound = false;
         int fingerCount = 0;
@@ -90,13 +88,9 @@ public class hand_part_finder : MonoBehaviour
             }
 
             fingerCount = fingers.Count;
-
-            // If we haven't found everything, wait for the next frame
-            if (!palmFound || fingerCount < 5)
-            {
-                yield return null; // Wait for the next frame
-            }
         }
+
+        // Assign an id to every child
         int id = 0;
 
         foreach (Transform finger in fingers)
