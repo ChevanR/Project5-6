@@ -179,5 +179,8 @@ For word explanation see [Value explanation](#Value-explanation)
 5. <b>Bitrate Mbps vs Network Latency</b>
   - Contains the Bitrate as function of the Network latency
 
+#### Example
+![](/Deliverables-P56/Images/graph-example.png)
+
 ### Questionnaire JSON output
 Refer to [questionnaire usage guide](#Questionnaire) for the value explanations
