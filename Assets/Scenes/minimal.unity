@@ -256,9 +256,6 @@ PrefabInstance:
     - {fileID: 3141401187708485790, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3960840377507083716, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 7519805078692150906}
     - targetCorrespondingSourceObject: {fileID: 3141328478226670392, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 762395718}
@@ -310,6 +307,7 @@ GameObject:
   - component: {fileID: 563689708}
   - component: {fileID: 563689713}
   - component: {fileID: 563689712}
+  - component: {fileID: 563689714}
   m_Layer: 0
   m_Name: Minimal Cube
   m_TagString: Untagged
@@ -336,7 +334,7 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.9, y: 0.9, z: 0.9}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &563689709
 MeshRenderer:
@@ -415,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _manager: {fileID: 3027549903594973571}
+  _manager: {fileID: 3141328480301125169}
   _ignoreHoverMode: 0
   _isIgnoringAllHoverState: 0
   _ignorePrimaryHover: 0
@@ -461,6 +459,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!114 &563689714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563689707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 3027549903594973571}
+  _ignoreHoverMode: 0
+  _isIgnoringAllHoverState: 0
+  _ignorePrimaryHover: 0
+  _ignoreContact: 0
+  _ignoreGraspingMode: 0
+  _ignoreGrasping: 0
+  _contactForceMode: 0
+  _allowMultiGrasp: 0
+  _moveObjectWhenGrasped: 1
+  graspedMovementType: 0
+  _overrideInteractionLayer: 0
+  _interactionLayer:
+    layerIndex: 0
+  _overrideNoContactLayer: 0
+  _noContactLayer:
+    layerIndex: 0
+  _eventTable:
+    _entries: []
 --- !u!1 &690529257
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +505,7 @@ GameObject:
   - component: {fileID: 690529260}
   - component: {fileID: 690529259}
   - component: {fileID: 690529258}
+  - component: {fileID: 690529265}
   m_Layer: 0
   m_Name: Minimal Sphere
   m_TagString: Untagged
@@ -495,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _manager: {fileID: 3027549903594973571}
+  _manager: {fileID: 3141328480301125169}
   _ignoreHoverMode: 0
   _isIgnoringAllHoverState: 0
   _ignorePrimaryHover: 0
@@ -648,6 +678,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690529265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690529257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 3027549903594973571}
+  _ignoreHoverMode: 0
+  _isIgnoringAllHoverState: 0
+  _ignorePrimaryHover: 0
+  _ignoreContact: 0
+  _ignoreGraspingMode: 0
+  _ignoreGrasping: 0
+  _contactForceMode: 0
+  _allowMultiGrasp: 0
+  _moveObjectWhenGrasped: 1
+  graspedMovementType: 0
+  _overrideInteractionLayer: 0
+  _interactionLayer:
+    layerIndex: 0
+  _overrideNoContactLayer: 0
+  _noContactLayer:
+    layerIndex: 0
+  _eventTable:
+    _entries: []
 --- !u!114 &762395718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +736,7 @@ GameObject:
   - component: {fileID: 1006552792}
   - component: {fileID: 1006552791}
   - component: {fileID: 1006552790}
+  - component: {fileID: 1006552793}
   m_Layer: 0
   m_Name: RidderZaal_001
   m_TagString: Untagged
@@ -799,7 +861,7 @@ MonoBehaviour:
   _ignorePrimaryHover: 0
   _ignoreContact: 0
   _ignoreGraspingMode: 0
-  _ignoreGrasping: 0
+  _ignoreGrasping: 1
   _contactForceMode: 0
   _allowMultiGrasp: 0
   _moveObjectWhenGrasped: 0
@@ -869,8 +931,39 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!114 &1006552793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1006552783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 3141328480301125169}
+  _ignoreHoverMode: 0
+  _isIgnoringAllHoverState: 0
+  _ignorePrimaryHover: 0
+  _ignoreContact: 0
+  _ignoreGraspingMode: 0
+  _ignoreGrasping: 1
+  _contactForceMode: 0
+  _allowMultiGrasp: 0
+  _moveObjectWhenGrasped: 0
+  graspedMovementType: 0
+  _overrideInteractionLayer: 0
+  _interactionLayer:
+    layerIndex: 0
+  _overrideNoContactLayer: 0
+  _noContactLayer:
+    layerIndex: 0
+  _eventTable:
+    _entries: []
 --- !u!1 &1066008545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,11 +1105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494198, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: -0.965
       objectReference: {fileID: 0}
     - target: {fileID: 494198, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3
+      value: -0.617
       objectReference: {fileID: 0}
     - target: {fileID: 494198, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1140,6 +1233,7 @@ GameObject:
   - component: {fileID: 1603343962}
   - component: {fileID: 1603343961}
   - component: {fileID: 1603343960}
+  - component: {fileID: 1603343963}
   m_Layer: 0
   m_Name: Ridderzaal_achter
   m_TagString: Untagged
@@ -1253,7 +1347,7 @@ MonoBehaviour:
   _ignorePrimaryHover: 0
   _ignoreContact: 0
   _ignoreGraspingMode: 0
-  _ignoreGrasping: 0
+  _ignoreGrasping: 1
   _contactForceMode: 0
   _allowMultiGrasp: 0
   _moveObjectWhenGrasped: 0
@@ -1323,8 +1417,39 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!114 &1603343963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603343956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f10fa40360571247a7ca806d6859557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manager: {fileID: 3141328480301125169}
+  _ignoreHoverMode: 0
+  _isIgnoringAllHoverState: 0
+  _ignorePrimaryHover: 0
+  _ignoreContact: 0
+  _ignoreGraspingMode: 0
+  _ignoreGrasping: 1
+  _contactForceMode: 0
+  _allowMultiGrasp: 0
+  _moveObjectWhenGrasped: 0
+  graspedMovementType: 0
+  _overrideInteractionLayer: 0
+  _interactionLayer:
+    layerIndex: 0
+  _overrideNoContactLayer: 0
+  _noContactLayer:
+    layerIndex: 0
+  _eventTable:
+    _entries: []
 --- !u!1001 &2091805975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1355,11 +1480,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3960840377507083716, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960840377507083717, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
+      propertyPath: custom
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3960840377507083717, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3960840377507083770, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       propertyPath: m_RootOrder
@@ -1431,9 +1560,6 @@ PrefabInstance:
     - {fileID: 3141398297361519470, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3960840377507083716, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7519805080146450968}
     - targetCorrespondingSourceObject: {fileID: 3141328478226670392, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2091805978}
@@ -1488,15 +1614,15 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3141328478226670392, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
   m_PrefabInstance: {fileID: 2091805975}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3960840377720354428 stripped
+--- !u!114 &3141328480301125169 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3960840379408178027, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3027549903249514746, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
   m_PrefabInstance: {fileID: 2091805975}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3141328480301125167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd01d3d6673b47b468dd44839db0c019, type: 3}
+  m_Script: {fileID: 11500000, guid: 0625e574c0d47a241b7dfc7a8c67ca2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &3960840377823018115 stripped
@@ -1504,113 +1630,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3960840377507083770, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
   m_PrefabInstance: {fileID: 360663417}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3960840377823018173 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3960840377507083716, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-  m_PrefabInstance: {fileID: 360663417}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3960840377833316232 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3960840379236430495, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-  m_PrefabInstance: {fileID: 2091805975}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35d303542ebe874296e5ac7907f763a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3960840379227083282 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3960840379408178027, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-  m_PrefabInstance: {fileID: 360663417}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd01d3d6673b47b468dd44839db0c019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3960840379583331302 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3960840379236430495, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-  m_PrefabInstance: {fileID: 360663417}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35d303542ebe874296e5ac7907f763a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &3960840379598313683 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3960840377507083716, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-  m_PrefabInstance: {fileID: 2091805975}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3960840379598313709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3960840377507083770, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
   m_PrefabInstance: {fileID: 2091805975}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7519805078692150906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3960840377823018173}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b87bea4fc54c5da468b83e596a868cd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoConnect: 1
-  useMockIfRequired: 1
-  _muteHaptics: 0
-  _softStartStopValue: 0
-  hapticRenderer: {fileID: 3960840379583331302}
-  leapServiceProvider: {fileID: 0}
-  _updateHaptics: 1
-  arrayTransform: {fileID: 0}
-  trackTransformObject: {fileID: 3960840379227083282}
-  trackerOrigin: {fileID: 8017005901622735395}
-  loadTrackerOriginFromJSON: 0
-  delay_in_seconds: 0
-  custom: 0
---- !u!114 &7519805080146450968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3960840379598313683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b87bea4fc54c5da468b83e596a868cd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoConnect: 1
-  useMockIfRequired: 1
-  _muteHaptics: 0
-  _softStartStopValue: 0
-  hapticRenderer: {fileID: 3960840377833316232}
-  leapServiceProvider: {fileID: 0}
-  _updateHaptics: 1
-  arrayTransform: {fileID: 0}
-  trackTransformObject: {fileID: 3960840377720354428}
-  trackerOrigin: {fileID: 8017005901242160717}
-  loadTrackerOriginFromJSON: 0
-  delay_in_seconds: 0
-  custom: 0
---- !u!4 &8017005901242160717 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8017005901968948058, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-  m_PrefabInstance: {fileID: 2091805975}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8017005901622735395 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8017005901968948058, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-  m_PrefabInstance: {fileID: 360663417}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
