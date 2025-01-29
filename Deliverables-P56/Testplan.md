@@ -42,7 +42,7 @@ Follow install and usage guides from [user guides](/Deliverables-P56/Usage-guide
    3. Analysis
       1. Follow the Graphing script usage guide from the user guides
    4. VPN
-      1. Connect both headset and laptop to the same VPN (guide not included)
+      1. Connect both headset and laptop to the same VPN (you can follow our setup from the VPN for remote streaming install guide from the user guides)
       2. Use the VPN ip of the client in the ALVR discovery
    5. Unity latency
       1. Follow the Unity Haptic delay usage guide from the user guides
