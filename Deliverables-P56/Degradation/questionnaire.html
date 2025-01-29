@@ -97,14 +97,42 @@
                 <span>Not usable (0%)</span><span>Partially usable (40%)</span><span>Usable with ease
                     (70%)</span><span>Extremely usable (100%)</span>
             </div>
-            <input type="range" min="1" max="10" value="5" class="slider" id="usability">
-            <p>Score: <span class="slider-output" id="usability-output">5</span></p>
+            <input type="range" min="1" max="10" value="5" class="slider" id="vr_usability">
+            <p>Score: <span class="slider-output" id="vr_usability-output">5</span></p>
         </div>
 
-        <!-- Latency Slider -->
+        <!-- Question 5 -->
         <div class="question">
-            <label for="latency">Latency (0-1000 ms)</label>
-            <input type="number" id="latency" min="0" max="1000" value="500">
+            <label><strong>How accurate in the 2D/3D plane does the haptic feel?</strong></label>
+            <div class="slider-label">
+                <span>Does not work (0%)</span><span>Partially accurate (40%)</span><span>Pretty accurate
+                    (70%)</span><span>Extremely accurate (100%)</span>
+            </div>
+            <input type="range" min="1" max="10" value="5" class="slider" id="haptic_accuracy">
+            <p>Score: <span class="slider-output" id="haptic_accuracy-output">5</span></p>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <label><strong>How responsive is the haptic feedback?</strong></label>
+            <div class="slider-label">
+                <span>Does not work (0%)</span><span>Partially responsive (40%)</span><span>Pretty responsive
+                    (70%)</span><span>Extremely responsive (100%)</span>
+            </div>
+            <input type="range" min="1" max="10" value="5" class="slider" id="haptic_responsiveness">
+            <p>Score: <span class="slider-output" id="haptic_responsiveness-output">5</span></p>
+        </div>
+
+        <!-- vr_latency Slider -->
+        <div class="question">
+            <label for="vr_latency">vr_latency (0-1000 ms)</label>
+            <input type="number" id="vr_latency" min="0" max="1000" value="500">
+        </div>
+
+        <!-- haptic_latency Slider -->
+        <div class="question">
+            <label for="haptic_latency">haptic_latency (0-1000 ms)</label>
+            <input type="number" id="haptic_latency" min="0" max="1000" value="500">
         </div>
 
         <!-- Bandwidth Input -->
@@ -130,8 +158,11 @@
             { id: "vr-usage", outputId: "vr-usage-output" },
             { id: "motion-sickness", outputId: "motion-sickness-output" },
             { id: "task-performance", outputId: "task-performance-output" },
-            { id: "usability", outputId: "usability-output" },
-            { id: "latency", outputId: "latency-output", suffix: " ms" }
+            { id: "vr_usability", outputId: "vr_usability-output" },
+            { id: "haptic_accuracy", outputId: "haptic_accuracy-output" },
+            { id: "haptic_responsiveness", outputId: "haptic_accuracy-output2" },
+            { id: "vr_latency", outputId: "vr_latency-output", suffix: " ms" },
+            { id: "haptic_latency", outputId: "haptic_latency-output", suffix: " ms" }
         ];
 
         questions.forEach(({ id, outputId, suffix = "" }) => {
@@ -150,8 +181,11 @@
                 { id: "vr-usage", key: "vrUsage" },
                 { id: "motion-sickness", key: "motionSickness" },
                 { id: "task-performance", key: "taskPerformance" },
-                { id: "usability", key: "usability" },
-                { id: "latency", key: "latency" },
+                { id: "vr_usability", key: "vr_usability" },
+                { id: "haptic_accuracy", key: "haptic_accuracy" },
+                { id: "haptic_responsiveness", key: "haptic_responsiveness" },
+                { id: "vr_latency", key: "vr_latency" },
+                { id: "haptic_latency", key: "haptic_latency" },
                 { id: "bandwidth", key: "bandwidth" }
             ];
 
@@ -178,8 +212,11 @@
             const vrUsage = parseInt(document.getElementById("vr-usage").value);
             const motionSickness = parseInt(document.getElementById("motion-sickness").value);
             const taskPerformance = parseInt(document.getElementById("task-performance").value);
-            const usability = parseInt(document.getElementById("usability").value);
-            const latency = parseInt(document.getElementById("latency").value);
+            const vr_usability = parseInt(document.getElementById("vr_usability").value);
+            const haptic_accuracy = parseInt(document.getElementById("haptic_accuracy").value);
+            const haptic_responsiveness = parseInt(document.getElementById("haptic_responsiveness").value);
+            const vr_latency = parseInt(document.getElementById("vr_latency").value);
+            const haptic_latency = parseInt(document.getElementById("haptic_latency").value);
             const bandwidth = parseInt(document.getElementById("bandwidth").value);
 
             // Validation checks
@@ -199,7 +236,7 @@
 
             // Check if all sliders have valid number inputs
             if (isNaN(vrUsage) || isNaN(motionSickness) || isNaN(taskPerformance) ||
-                isNaN(usability) || isNaN(latency)) {
+                isNaN(vr_usability) || isNaN(haptic_accuracy) || isNaN(vr_latency) || isNaN(haptic_latency) || isNaN(haptic_responsiveness)) {
                 alert("Please fill in all questions with valid numbers.");
                 isValid = false;
             }
@@ -215,8 +252,11 @@
                     { key: "vrUsage", value: vrUsage },
                     { key: "motionSickness", value: motionSickness },
                     { key: "taskPerformance", value: taskPerformance },
-                    { key: "usability", value: usability },
-                    { key: "latency", value: latency },
+                    { key: "vr_usability", value: vr_usability },
+                    { key: "haptic_accuracy", value: haptic_accuracy },
+                    { key: "haptic_responsiveness", value: haptic_responsiveness },
+                    { key: "vr_latency", value: vr_latency },
+                    { key: "haptic_latency", value: haptic_latency },
                     { key: "bandwidth", value: bandwidth },
                     { key: "timestamp", value: currentTime }
                 ];
@@ -255,9 +295,6 @@
             // Optionally, display a confirmation message
             alert("JSON copied to clipboard!");
         }
-
-        // Add an event listener to handle the form submission or button click
-        document.getElementById("export-btn").addEventListener("click", exportToJson);
 
 
     </script>
