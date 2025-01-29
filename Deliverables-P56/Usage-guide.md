@@ -23,6 +23,24 @@ You can download the SteamVR plugin from [AssetStore](https://assetstore.unity.c
 #### Ultraleap Hap-E Haptics
 You can follow the guide from [Ultraleap](https://docs.ultraleap.com/xr-and-tabletop/xr/unity/getting-started/index.html#set-up-hand-tracking-in-unity).  
 
+### VPN for remote streaming
+- A VPN of preferance can be installed, in this guide we will be using OpenVPN
+- Installation setup
+- 1. Install OpenVPN on the host (server)
+- 2. Install OpenVPN on the client (VR headset/Phone) For this you will need to install the APK. On the phone you can download it on the playstore. In case of the headset this will need to be sideloaded
+- Sideloading Guide for the VR Headset (Skip this if you use a phone)
+- 1. Install Android Platform Tools on the host (https://developer.android.com/tools/releases/platform-tools)
+- 2. Connect the client with an USB-C cable to the host. The client will have a popup where "File Transfer" needs to be pressed. If this doesnt happen you need to "Enable USB debugging and enable developer mode. Tutorials for this can be found online
+- 3. Open the folder of the Android Platform Tools wich you just installed
+- 4. Download the OpenVPN.apk wich can be downloaded from various sources
+- 5. drop the OpenVPN.apk in the Android Platform Tools folder (It needs to be unzipped)
+- 6. Open command prompt and in this folder (Example: C:\Downloads\platform-tools-latest-windows\platform-tools)
+- 7. Run this command "adb install openvpn.apk" It should return installation succesfull
+- Connecting the client and the host
+- 1. Create or find a public VPN server of your liking. You can download these configuration files from various websites (.ovpn files) On the host you should open this file, OpenVPN will open and connect automatically after you have entered the username and password (these will be in the filename or on the website where you downloaded it)
+- 2. In the file explorer you should see your client. Thereafter drag the .ovpn files into the downloads folder. After this run the OpenVPN app on your client. There should be a upload file button. Select the .ovpn file. Enter password and username, then connect
+- Once both the Client and the Host are connected you are good to go and the setup is complete
+
 ---
 
 ## Usage guides
