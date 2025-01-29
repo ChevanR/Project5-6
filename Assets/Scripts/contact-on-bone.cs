@@ -5,7 +5,7 @@ using UnityEngine;
 public class FingerContactHandler : MonoBehaviour
 {
     public int id;
-    private CustomHapEDeviceManager hapEDeviceManager;
+    private HapEDeviceManager hapEDeviceManager;
     [SerializeField] public string jsonFileName;
     private Vector3 handPos;
     // Trigger event for detecting contact
@@ -46,7 +46,7 @@ public class FingerContactHandler : MonoBehaviour
                 parentTransform = parentTransform.parent;
                 if (parentTransform != null)
                 {
-                    hapEDeviceManager = parentTransform.parent.parent.GetComponent<CustomHapEDeviceManager>(); // The grandparent
+                    hapEDeviceManager = parentTransform.parent.parent.GetComponent<HapEDeviceManager>(); // The grandparent
                     //Debug.Log(hapEDeviceManager.name);
                 }
             }

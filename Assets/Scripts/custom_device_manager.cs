@@ -108,7 +108,7 @@ namespace HapE.Unity
             leapServiceProvider.GetLeapController().FrameReady += FrameReady;
 
             // Start the custom coroutine
-            StartCoroutine(RunCoroutine(0.01f));
+            if (custom) StartCoroutine(RunCoroutine(0.01f));
         }
 
         private void FrameReady(object sender, Leap.FrameEventArgs e)
@@ -883,6 +883,7 @@ namespace HapE.Unity
         /// 
         Dictionary<int, Tuple<Vector2, bool>> items = new Dictionary<int, Tuple<Vector2, bool>>();
         [SerializeField] float delay_in_seconds = 0.0f;
+        [SerializeField] Boolean custom = false;
 
         // Coroutine that checks if the palm it hitting the object to play haptic feedback
         private IEnumerator RunCoroutine(float interval)

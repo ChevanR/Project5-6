@@ -167,8 +167,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3960840377507083717, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
+      propertyPath: custom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3960840377507083717, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3960840377507083770, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       propertyPath: m_RootOrder
@@ -253,7 +257,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3960840377507083716, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 7519805078692150906}
     - targetCorrespondingSourceObject: {fileID: 3141328478226670392, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
       insertIndex: -1
@@ -1555,7 +1559,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3960840377823018173}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b87bea4fc54c5da468b83e596a868cd6, type: 3}
   m_Name: 
@@ -1572,6 +1576,7 @@ MonoBehaviour:
   trackerOrigin: {fileID: 8017005901622735395}
   loadTrackerOriginFromJSON: 0
   delay_in_seconds: 0
+  custom: 0
 --- !u!114 &7519805080146450968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,6 +1601,7 @@ MonoBehaviour:
   trackerOrigin: {fileID: 8017005901242160717}
   loadTrackerOriginFromJSON: 0
   delay_in_seconds: 0
+  custom: 0
 --- !u!4 &8017005901242160717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8017005901968948058, guid: e06a0a5474f45a04bb1f8f70b4ffed8f, type: 3}
