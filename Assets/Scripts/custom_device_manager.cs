@@ -916,6 +916,7 @@ namespace HapE.Unity
                 {
                     if (last_palm)
                     {
+                        yield return new WaitForSeconds(delay_in_seconds);
                         last_palm = false;
                         Debug.Log("Palm stop");
                         StopHaptics();
