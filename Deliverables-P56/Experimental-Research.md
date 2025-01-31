@@ -36,8 +36,9 @@ This experiment evaluates the impact of **network latency** on **VR user experie
 ---
 
 ## Results  
-See the json and html files [here](/Deliverables-P56/Degradation/output/)
+See the json and html files [here](/Deliverables-P56/Degradation/)
 Users 1-4 where tested without using haptics.
+### Setup
 The setup consisted of:  
 - ALVR (VR streaming)
   - Testers 1-2 used wired(TCP) connection, with Oculus Meta Quest 3
@@ -92,12 +93,21 @@ More info can be found [here](/Deliverables-P56/Usage-guide.md)
 | 300              | 3.5            | 4            | 4            | 2            | 4            |
 | 400              | 2.0            | 2            | 2            | 2            | 2            |
 
+See the combined graphed out data below.  
+![](/Deliverables-P56/Degradation/output/Experience%20data/VR/user-experience.png)
+
 ### Bitrate
 Also users 3 and 4 have been tested on bitrate, this is harder to document or show since the low bitrate can happen at different times, but there are some boundaries that were found:
 **Artifacts** started appearing around 3800 KB/s.  
 **The usability limit** was found to be around 2600 KB/s.  
 **Crash limit** the simulation crashed at 1300 KB/s.  
 Note that values can be different for different protocols, settings or hardware used.
+
+### ALVR logging outcome
+Taking a look at the [ALVR streaming data](/Deliverables-P56/Degradation/output/ALVR%20data/html/) from the test sessions of users 3 and 4.  
+There seems to be a correlation between high latency and low bitrate, with a simple explanation being the fact that with more latency frames are send later meaning it might cost less bitrate to actually send these frames, because of how ALVR streams the scenes. This is just an educated guess, but might give an idea on how it could work.  
+
+FPS does not seem to be impacted, but it is also the fact that the option "adapt to framerate" was turned on, which will change the bitrate output based on the framerate to keep it at the desired level.
 
 ---
 
@@ -114,22 +124,93 @@ Note that values can be different for different protocols, settings or hardware 
 ---
 
 ### Part 2: Haptic Feedback Delay Testing  
-**Status**: Preliminary tests indicate tactile accuracy declines beyond **150ms latency**. Further testing with isolated delay conditions (150ms–300ms) is planned to confirm findings.  
+### Setup
+See the json and html files [here](/Deliverables-P56/Degradation/)
+Users 1-4 where tested without using haptics.
+The setup consisted of:  
+- ALVR (VR streaming)
+  - wired(TCP) connection
+  - ALVR streaming port latency
+- ALVR settings (All the settings that mostly matter, or have been changed):
+  - Resolution: 4288
+  - Preferred framerate: 90Hz
+  - Encoder preset: Speed
+  - Bitrate: adaptive no limit (around 300-600 mbps)
+  - Adept to framerate: True
+  - Preferred codec: h264
+- The Unity world provided from this project
+- Clumsy (Network degradation)
+- Ultrasonic array (Haptic)
+- Laptop specs:
+  - CPU: i7 12700h
+  - GPU: RTX A1000
+  - RAM: 32GB 4800MHZ 
+
+### Results  
+
+See the results from the concluded tests in the graph below:  
+![](/Deliverables-P56/Degradation/output/Experience%20data/Haptic/user-experience.png)
+
+---
+
+## Analysis Summary  
+### Latency
+- In the small test sample it seems like a latency of below **400 ms** is viable for the simplistic application in the Unity project.  
+- If an actual big terrain were to be applied it will most definitely will be lower.
+
+---
+
+## Part 3 combined
+### Setup
+See the json and html files [here](/Deliverables-P56/Degradation/)
+Users 1-4 where tested without using haptics.
+The setup consisted of:  
+- ALVR (VR streaming)
+  - wired(TCP) connection
+  - ALVR streaming port latency
+- ALVR settings (All the settings that mostly matter, or have been changed):
+  - Resolution: 4288
+  - Preferred framerate: 90Hz
+  - Encoder preset: Speed
+  - Bitrate: adaptive no limit (around 300-600 mbps)
+  - Adept to framerate: True
+  - Preferred codec: h264
+- The Unity world provided from this project
+- Clumsy (Network degradation)
+- Ultrasonic array (Haptic)
+- Laptop specs:
+  - CPU: i7 12700h
+  - GPU: RTX A1000
+  - RAM: 32GB 4800MHZ 
+
+### Results
+From the graphs below it can clearly be seen that the latency impact from the VR part impacts the experience with the haptic device, the red dots have the same haptic latency as the blue ones but also include some kind of vr latency shown by the tag.
+#### User 5
+![](/Deliverables-P56/Degradation/output/Experience%20data/Combined/user5.png)
+#### User 6
+![](/Deliverables-P56/Degradation/output/Experience%20data/Combined/user6.png)
+#### User 7
+![](/Deliverables-P56/Degradation/output/Experience%20data/Combined/user7.png)
+
+---
+
+## Analysis Summary  
+### Latency
+- From the test it can be concluded that vr latency has noticeable impact on the haptic feedback responsiveness and accuracy, but because of the small sample size we cannot tell how much it impacts the haptic feedback.
 
 ---
 
 ## Conclusion  
 1. **VR Streaming**:  
-   - Optimal performance: **50–100ms latency**.  
+   - Optimal performance: Below **125ms latency**.  
    - Usability degrades: Beyond **150ms latency**.  
+   - Bitrate: Above **4000 KB/s** to prevent artifacts, but it also depends on the situation.
 2. **Motion Sickness**:  
    - Tolerable latency: Up to **300ms** (individual sensitivity varies).  
 3. **Haptic Feedback**:  
-   - Preliminary results: Reliable up to **150ms latency**.  
+   - Accuracy results: Mostly reliable up to **300ms latency**.  
+   - Responsiveness results: Mostly reliable up to **300ms latency**. 
 
-**Acceptable Latency Thresholds:**  
-- **VR Streaming**: 50–100ms  
-- **Haptic Feedback**: Up to 150ms (pending validation).  
 
 ---
 

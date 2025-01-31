@@ -2,7 +2,6 @@
 Refer to [Usage guide](/Deliverables-P56/Usage-guide.md) for and explanation on how to read the data.
 
 The folder structure is as follows:
-## Output/
 ```graphsql
 📂 ALVR data/
 │── 📂 html/        # Contains HTML reports from ALVR tests  
@@ -25,8 +24,3 @@ The folder structure is as follows:
 │── cable-port-only.html  # Test file for wired TCP connection (can be ignored)  
 ```
 
-## Scripts/
-Contains the python scripts that were used to gather all the data in the output folder
-
-## Questionnaire
-Follow the guide at [Usage guide](/Deliverables-P56/Usage-guide.md) on the questionnaire on how to use it.

@@ -75,7 +75,7 @@ To downsize the data from the [logging script](#Logging-script), as it can be qu
 
 ### Unity Haptic delay
 In the loaded Unity world, open the scenes folder and load the scene called minimal.  
-Then Under ``minimal>Player>UltraleapDevice Left`` there should be an attached script called ``Custom Hap E Device Manager (Script)`` which has a parameter called ``Delay_in_seconds`` its default value is 0, and changing this should introduce more latency for the haptic feedback.  
+Then Under ``minimal>Player>UltraleapDevice Left`` there should be an attached script called ``Custom Hap E Device Manager (Script)`` which has a parameter called ``Delay_in_seconds`` its default value is 0, and changing this should introduce more latency for the haptic feedback, you can see it on the bottom right of the following screenshot.  
 ![](/Deliverables-P56/Images/haptic-delay.png)
 
 ### Questionnaire
@@ -83,11 +83,13 @@ The questionnaire is used for turning the user experience into JSON data, such t
 You can follow the table below for filling in the values based on the experience.
 | Question/Score                                          | 1                      | 2   | 3   | 4                         | 5   | 6   | 7                      | 8   | 9   | 10                          |
 | ------------------------------------------------------- | ---------------------- | --- | --- | ------------------------- | --- | --- | ---------------------- | --- | --- | --------------------------- |
-| How much have you used VR before                        | Never                  |     |     | A few times (1–3 times)   |     |     | Moderate use (weekly)  |     |     | Very frequently (daily)     |
+| **How much have you used VR before**                    | Never                  |     |     | A few times (1–3 times)   |     |     | Moderate use (weekly)  |     |     | Very frequently (daily)     |
 | **Feeling (Motion sickness)**                           | Extremely nauseous     |     |     | Noticeable discomfort     |     |     | Slight discomfort      |     |     | No discomfort at all        |
 | **Can you still perform the same task you were doing?** | Not at all             |     |     | Somewhat (50% effective)  |     |     | Mostly (75% effective) |     |     | Completely (100% effective) |
 | **How usable is it?**                                   | Not usable (0%)        |     |     | Partially usable (40%)    |     |     | Usable with ease (70%) |     |     | Extremely usable (100%)     |
-| **Are you able to mitigate the tampering?**             | No, it is too bad (0%) |     |     | Partially mitigated (40%) |     |     | Mostly mitigated (70%) |     |     | Fully mitigated (100%)      |
+| **How accurate in the 2D/3D plane does the haptic feel?** | Does not work (0%)     |     |     | Partially accurate (40%)  |     |     | Pretty accurate (70%)  |     |     | Extremely accurate (100%)   |
+| **How responsive is the haptic feedback?**             | Does not work (0%)     |     |     | Partially responsive (40%)|     |     | Pretty responsive (70%)|     |     | Extremely responsive (100%) |
+
 
 ---
 

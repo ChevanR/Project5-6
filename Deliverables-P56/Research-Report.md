@@ -24,9 +24,11 @@ This research investigates the integration of **VR streaming** and **haptic feed
 The study combines **experimental testing** and **literature research**. Tools include **ALVR** for VR streaming, **Ultraleap** for haptic feedback, and **Clumsy** for network degradation simulation. Performance data (e.g., latency, frame rates, and input delays) were logged in JSON format and analyzed alongside user feedback.  
 
 ### Results  
-- **VR Streaming**: Performance declines significantly at **100ms latency**, reducing frame rates and increasing lag.  
+- **VR Streaming**: Performance declines significantly at **125ms latency**, reducing frame rates and increasing lag.  
 - **Haptic Feedback**: Accuracy deteriorates beyond **150ms latency**, but remains functional up to this point.  
-- **Combined System**: Latency below **100ms** is required for smooth operation.  
+- **Combined System**: Latency below **125ms** is required for smooth operation, depending on the use and user.  
+
+You can read more about the results in the [experimental research](/Deliverables-P56/Experimental-Research.md).
 
 #### Architecture diagram
 ![](Architecture%20diagram.png)
