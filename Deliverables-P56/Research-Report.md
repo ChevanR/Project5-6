@@ -24,8 +24,8 @@ This research investigates the integration of **VR streaming** and **haptic feed
 The study combines **experimental testing** and **literature research**. Tools include **ALVR** for VR streaming, **Ultraleap** for haptic feedback, and **Clumsy** for network degradation simulation. Performance data (e.g., latency, frame rates, and input delays) were logged in JSON format and analyzed alongside user feedback.  
 
 ### Results  
-- **VR Streaming**: Performance declines significantly at **125ms latency**, reducing frame rates and increasing lag.  
-- **Haptic Feedback**: Accuracy deteriorates beyond **150ms latency**, but remains functional up to this point.  
+- **VR Streaming**: Performance declines significantly at **150ms latency**, reducing frame rates and increasing lag.  
+- **Haptic Feedback**: Accuracy deteriorates beyond **300ms latency**, but remains functionally viable up to this point.  
 - **Combined System**: Latency below **125ms** is required for smooth operation, depending on the use and user.  
 
 You can read more about the results in the [experimental research](/Deliverables-P56/Experimental-Research.md).
@@ -135,12 +135,12 @@ A **mixed-method approach** combining experimental testing and literature analys
 Network latency significantly impacts VR streaming and haptic feedback performance.  
 
 **Key Findings**:  
-1. VR streaming performance declines noticeably at **100ms latency**.  
-2. Haptic feedback remains functional up to **150ms latency** but degrades thereafter.  
-3. Combined VR and haptic systems require latency below **100ms** for smooth integration.  
+1. VR streaming performance declines noticeably at **125ms latency**.  
+2. Haptic feedback remains functional up to **300ms latency** but degrades thereafter.  
+3. Combined VR and haptic systems require latency below **125ms** for smooth integration.  
 
 ### Recommendations  
-1. **Optimize Network Conditions**: Maintain latency below **100ms**.  
+1. **Optimize Network Conditions**: Maintain latency below **125ms**.  
 2. **Refine Synchronization**: Develop algorithms to improve VR-haptic synchronization.  
 3. **Broader Testing**: Conduct larger-scale tests under varying network conditions.  
 
