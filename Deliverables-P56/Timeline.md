@@ -18,7 +18,9 @@
 ### 2024-11-17  
 - **Multiplayer Functionality Completed**:  
   - Synchronized two VR headsets in the same environment.  
-  - Added client identification using name tags and color markers.  
+  - Added client identification using name tags and color markers.
+ 
+  
 
 ---
 
@@ -36,7 +38,9 @@
 
 ### 2024-12-11  
 - **Global Connectivity Tests**:  
-  - Simulated global connections using VPN tools (e.g., OpenVPN) to verify server accessibility and performance worldwide.  
+  - Simulated global connections using VPN tools (e.g., OpenVPN) to verify server accessibility and performance worldwide.
+- **Unity world**
+  - Start haptic feedback on height detection, using button invoking
 
 ### 2024-12-15  
 - **Gesture-Based Controls for Camera Switching**:  
@@ -54,12 +58,18 @@
 ### 2025-01-08  
 - **Documentation and MVP Completion**:  
   - Finalized all project documentation, including test plans, technical reports, and data analysis.  
-  - Prepared the MVP showcasing VR remote rendering, haptic integration, and network testing.  
+  - Prepared the MVP showcasing VR remote rendering, haptic integration, and network testing.
+ 
+### 2025-01-10
+- **Unity world**
+  - Integrated VR camera into Haptic world
+  - Added colission checkers with the hand from the haptic device
+  - Start haptic feedback on colission detection and close it
 
 ### 2025-01-12  
 - **Project Finalized**:  
   - Delivered final MVP presentation to stakeholders.  
-  - Allocated time for final refinements and stakeholder feedback integration.  
+  - Allocated time for final refinements and stakeholder feedback integration.
 
 ---
 
@@ -69,17 +79,4 @@ This changelog highlights the key milestones achieved between November 2024 and 
 
 ---
 
-
-# True Changelog (needs updates)
-
 ### 
-
-### 2024-12-11
-- **Unity world**
-  - Start haptic feedback on height detection, using button invoking
-
-### 2025-01-10
-- **Unity world**
-  - Integrated VR camera into Haptic world
-  - Added colission checkers with the hand from the haptic device
-  - Start haptic feedback on colission detection and close it
