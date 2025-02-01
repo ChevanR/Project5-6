@@ -78,7 +78,8 @@ Evaluate the impact of network degradation on **VR streaming** and **haptic feed
 
 ---
 
-## Theoretical Framework  
+## Theoretical Framework 
+To read about choices made for parts of this project, you can read [Other-researches](/Deliverables-P56/Other-researches.md) 
 ### Existing Challenges  
 1. **Latency in XR Systems**:  
    - Real-time streaming tools like **NVIDIA GeForce Now** highlight the disruption caused by latency.  
