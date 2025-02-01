@@ -115,18 +115,18 @@ A **mixed-method approach** combining experimental testing and literature analys
 
 ## Results  
 ### VR Streaming Performance  
-| **Latency (ms)** | **Frame Rate (FPS)** | **Input Delay (ms)** | **User Feedback**             |  
-|------------------|----------------------|----------------------|--------------------------------|  
-| 50               | 72                   | 20                   | "Smooth and responsive."       |  
-| 100              | 60                   | 50                   | "Slight lag, still acceptable."|  
-| 200              | 40                   | 150                  | "Severe lag, unusable."        |  
+| **Latency (ms)** | **Frame Rate (FPS)** | **Input Delay (ms)** | **User Feedback**               |
+| ---------------- | -------------------- | -------------------- | ------------------------------- |
+| 50               | 72                   | 20                   | "Smooth and responsive."        |
+| 100              | 60                   | 50                   | "Slight lag, still acceptable." |
+| 200              | 40                   | 150                  | "Severe lag, unusable."         |
 
 ### Haptic Feedback Performance  
-| **Latency (ms)** | **Feedback Accuracy** | **User Comments**                    |  
-|------------------|-----------------------|--------------------------------------|  
-| 50               | 95%                   | "Accurate and immersive response."   |  
-| 100              | 80%                   | "Slight delay, still functional."    |  
-| 200              | 50%                   | "Noticeable lag, unreliable feedback."|  
+| **Latency (ms)** | **Feedback Accuracy** | **User Comments**                      |
+| ---------------- | --------------------- | -------------------------------------- |
+| 50               | 95%                   | "Accurate and immersive response."     |
+| 100              | 80%                   | "Slight delay, still functional."      |
+| 200              | 50%                   | "Noticeable lag, unreliable feedback." |
 
 ---
 
@@ -138,6 +138,7 @@ Network latency significantly impacts VR streaming and haptic feedback performan
 1. VR streaming performance declines noticeably at **125ms latency**.  
 2. Haptic feedback remains functional up to **300ms latency** but degrades thereafter.  
 3. Combined VR and haptic systems require latency below **125ms** for smooth integration.  
+4. The ultrasonic array makes it difficult to use communication involving headsets and microphones, because of the noise they make in a ~5m radius.
 
 ### Recommendations  
 1. **Optimize Network Conditions**: Maintain latency below **125ms**.  

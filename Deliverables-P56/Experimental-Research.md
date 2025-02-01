@@ -197,7 +197,7 @@ From the graphs below it can clearly be seen that the latency impact from the VR
 ## Analysis Summary  
 ### Latency
 - From the test it can be concluded that vr latency has noticeable impact on the haptic feedback responsiveness and accuracy, but because of the small sample size we cannot tell how much it impacts the haptic feedback.
-
+- During testing it was also concluded that the ultrasonic device cannot really be used when using wireless headset or a microphone, as it creates a lot of noise and makes the user unhearable.
 ---
 
 ## Conclusion  
@@ -210,7 +210,7 @@ From the graphs below it can clearly be seen that the latency impact from the VR
 3. **Haptic Feedback**:  
    - Accuracy results: Mostly reliable up to **300ms latency**.  
    - Responsiveness results: Mostly reliable up to **300ms latency**. 
-
+   - With regards to communication in the VR world using the ultrasonic array, it cannot be advised to use it, as users will be difficult to understand.
 
 ---
 
