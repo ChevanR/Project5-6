@@ -81,14 +81,14 @@ Then Under ``minimal>Player>UltraleapDevice Left`` there should be an attached s
 ### Questionnaire
 The questionnaire is used for turning the user experience into JSON data, such that it can be graphed by a script.  
 You can follow the table below for filling in the values based on the experience.
-| Question/Score                                          | 1                      | 2   | 3   | 4                         | 5   | 6   | 7                      | 8   | 9   | 10                          |
-| ------------------------------------------------------- | ---------------------- | --- | --- | ------------------------- | --- | --- | ---------------------- | --- | --- | --------------------------- |
-| **How much have you used VR before**                    | Never                  |     |     | A few times (1–3 times)   |     |     | Moderate use (weekly)  |     |     | Very frequently (daily)     |
-| **Feeling (Motion sickness)**                           | Extremely nauseous     |     |     | Noticeable discomfort     |     |     | Slight discomfort      |     |     | No discomfort at all        |
-| **Can you still perform the same task you were doing?** | Not at all             |     |     | Somewhat (50% effective)  |     |     | Mostly (75% effective) |     |     | Completely (100% effective) |
-| **How usable is it?**                                   | Not usable (0%)        |     |     | Partially usable (40%)    |     |     | Usable with ease (70%) |     |     | Extremely usable (100%)     |
-| **How accurate in the 2D/3D plane does the haptic feel?** | Does not work (0%)     |     |     | Partially accurate (40%)  |     |     | Pretty accurate (70%)  |     |     | Extremely accurate (100%)   |
-| **How responsive is the haptic feedback?**             | Does not work (0%)     |     |     | Partially responsive (40%)|     |     | Pretty responsive (70%)|     |     | Extremely responsive (100%) |
+| Question/Score                                            | 1                  | 2   | 3   | 4                          | 5   | 6   | 7                       | 8   | 9   | 10                          |
+| --------------------------------------------------------- | ------------------ | --- | --- | -------------------------- | --- | --- | ----------------------- | --- | --- | --------------------------- |
+| **How much have you used VR before**                      | Never              |     |     | A few times (1–3 times)    |     |     | Moderate use (weekly)   |     |     | Very frequently (daily)     |
+| **Feeling (Motion sickness)**                             | Extremely nauseous |     |     | Noticeable discomfort      |     |     | Slight discomfort       |     |     | No discomfort at all        |
+| **Can you still perform the same task you were doing?**   | Not at all         |     |     | Somewhat (50% effective)   |     |     | Mostly (75% effective)  |     |     | Completely (100% effective) |
+| **How usable is it?**                                     | Not usable (0%)    |     |     | Partially usable (40%)     |     |     | Usable with ease (70%)  |     |     | Extremely usable (100%)     |
+| **How accurate in the 2D/3D plane does the haptic feel?** | Does not work (0%) |     |     | Partially accurate (40%)   |     |     | Pretty accurate (70%)   |     |     | Extremely accurate (100%)   |
+| **How responsive is the haptic feedback?**                | Does not work (0%) |     |     | Partially responsive (40%) |     |     | Pretty responsive (70%) |     |     | Extremely responsive (100%) |
 
 
 ---
