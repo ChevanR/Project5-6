@@ -15,7 +15,7 @@ Source: https://jagt.github.io/clumsy/
 
 ### Unity
 Install Unity from https://unity.com/download.  
-You can download the world with all the packages and plugins from ...
+You can download the world with all the packages and plugins from [OneDrive]() you need a password and the link expires on the second of May (02-05-2025).
 
 #### SteamVR plugin
 You can download the SteamVR plugin from [AssetStore](https://assetstore.unity.com/packages/tools/integration/steamvr-plugin-32647).
