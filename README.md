@@ -28,10 +28,10 @@ For setup instructions, please refer to the [usage guide](Deliverables-P56/Usage
 - **User testing**: Incorporates feedback-driven refinements to boost usability and interactivity.
 
 ## Contributors
-- **Chevan r.** – Project lead and haptic integration specialist.
-- **Pirmin k.** – Vr streaming and backend integration.
-- **Derk o.** – Unity development and testing.
-- **Pepijn b.** – Research and data analysis.
+- **Chevan r.** – Documentation & C# Programming.
+- **Pirmin k.** – Haptic integration.
+- **Derk o.** – VR Streaming.
+- **Pepijn b.** – Documenation & Latency testing.
 
 For inquiries or contributions, please open an issue on github.
 
