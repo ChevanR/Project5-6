@@ -31,7 +31,7 @@ For setup instructions, please refer to the [usage guide](Deliverables-P56/Usage
 - **Chevan r.** – Documentation & C# Programming.
 - **Pirmin k.** – Haptic integration.
 - **Derk o.** – VR Streaming.
-- **Pepijn b.** – Documenation & Latency testing.
+- **Pepijn b.** – Documentation & Latency testing.
 
 For inquiries or contributions, please open an issue on github.
 
