@@ -7,7 +7,7 @@ Refer to [usage guide](Deliverables-P56/Usage-guide.md) for comprehensive setup 
 
 ## Project overview
 This repository contains all the source code, documentation, and testing frameworks for the vr and haptic cloud integration project. Our objective is to merge vr streaming with haptic feedback to deliver an interactive extended reality (xr) experience. Key aspects include:
-1. **Vr streaming**: Remote rendering of vr environments utilizing cloud servers.
+1. **VR streaming**: Remote rendering of vr environments utilizing cloud servers.
 2. **Haptic feedback**: Integration of tactile sensations via ultraleap devices.
 3. **Latency management**: Simulation and analysis of network degradation.
 4. **User experience**: Optimizing usability under variable latency conditions.
