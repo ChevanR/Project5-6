@@ -1,4 +1,4 @@
-# VR and haptic cloud integration project
+# VR and haptic integration project
 
 This project aims to revolutionize remote vr experiences by integrating cutting-edge haptic feedback through cloud technology, providing users with a truly immersive xr environment.
 
