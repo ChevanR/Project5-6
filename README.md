@@ -5,11 +5,11 @@ This project aims to revolutionize remote VR experiences by integrating cutting-
 ---
 
 ## Table of contents
-1. [Project Overview](#project-overview)  
-2. [Repository Structure](#repository-structure)  
-3. [Key Documentation](#key-documentation)  
+1. [Project overview](#project-overview)  
+2. [Repository structure](#repository-structure)  
+3. [Key documentation](#key-documentation)  
 4. [Purpose of the repository](#purpose-of-the-repository)  
-5. [Key Features](#key-features)  
+5. [Key features](#key-features)  
 6. [Contributors](#contributors)  
 7. [License](#license)
 
