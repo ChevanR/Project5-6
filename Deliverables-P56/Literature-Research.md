@@ -21,10 +21,10 @@ To guide this review, we formulated the following questions:
 - **Ultrasonic arrays for haptic feedback:**  
   We reviewed the literature on ultrasonic haptic feedback as well as broader haptic systems used in various applications, including wearable and mechanical devices. Although specific studies on ultrasonic arrays in XR are limited, research on conventional haptic feedback (e.g., vibration motors, force-feedback controllers) provides insights into latency tolerance and synchronization challenges (Freeman et al., 2021). Additionally, studies such as Carter et al. (2019) offer a basis for understanding the potential of ultrasonic mid-air haptics for touchless interfaces.
 
-- **cloud-based VR streaming:**  
+- **Cloud-based VR streaming:**  
   Our review covers research on the network requirements for real-time VR applications. Key performance factors include acceptable latency thresholds, bandwidth demands, and the effectiveness of adaptive streaming algorithms (Chen et al., 2020; Shi et al., 2022; Zhang & Gupta, 2021). These findings are particularly relevant for our project, where VR streaming must remain smooth and responsive in training environments despite variable network conditions.
 
-### 3.2 defining search terms and strings
+### 3.2 Defining search terms and strings
 Key search terms included:
 - “ultrasonic arrays haptic feedback,” “ultrasonic tactile systems in XR”
 - “VR cloud streaming latency,” “adaptive streaming algorithms for VR”
@@ -39,13 +39,13 @@ These were applied across databases such as IEEE Xplore, ACM Digital Library, an
 
 ## 4. Findings
 
-### 4.1 ultrasonic haptic feedback
+### 4.1 Ultrasonic haptic feedback
 Recent studies indicate that ultrasonic arrays can generate precise, contactless tactile sensations by modulating the amplitude and intensity of ultrasonic waves (Carter et al., 2019). Broader haptic research shows that non-contact systems offer benefits in terms of hygiene and comfort compared to conventional mechanical devices (Freeman et al., 2021). However, integrating ultrasonic haptics in an XR setting introduces specific challenges:
 - **Latency tolerance:** Ensuring that tactile feedback is synchronized with visual and auditory cues is critical; delays or mismatches can break immersion and reduce training effectiveness (Kotranza et al., 2023).
 - **User calibration:** Variability in individual perception of haptic stimuli necessitates robust calibration methods to ensure consistency.
 - **Hardware integration:** Current ultrasonic devices are often bulky or expensive, which may limit their deployment in scalable, cost-effective training systems.
 
-### 4.2 cloud-based VR streaming
+### 4.2 Cloud-based VR streaming
 The literature on VR streaming highlights several performance requirements:
 - **Latency:** Studies have shown that end-to-end latencies above 20–50 ms can impair user experience, with specific thresholds varying based on the application (Chen et al., 2020).
 - **Bandwidth:** High-resolution VR streaming typically demands 50–100 Mbps, with even higher bandwidth needed for ultra-high-definition content (Shi et al., 2022).
