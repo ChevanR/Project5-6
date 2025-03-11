@@ -64,25 +64,25 @@ The repository is organized into the following folders and files to help you qui
 
 ## Key documentation
 
-- [**Research Report**](Deliverables-P56/Research-Report.md)  
+- [**Research report**](Deliverables-P56/Research-Report.md)  
   Provides detailed experimental methodologies, background research, and findings.
 
-- [**Usage Guide**](Deliverables-P56/Usage-guide.md)  
+- [**Usage guide**](Deliverables-P56/Usage-guide.md)  
   Offers comprehensive setup and operating instructions for the VR and haptic systems.
 
-- [**Experimental Research**](Deliverables-P56/Experimental-Research.md)  
+- [**Experimental research**](Deliverables-P56/Experimental-Research.md)  
   Describes the experiments conducted, including data collection and analysis.
 
-- [**Test Plan**](Deliverables-P56/Testplan.md) and [**Test Report**](Deliverables-P56/Testreport.md)  
+- [**Test plan**](Deliverables-P56/Testplan.md) and [**Test report**](Deliverables-P56/Testreport.md)  
   Outline the testing approach, procedures, and results for quality assurance.
 
-- [**Risk Management**](Deliverables-P56/Risk-Management.md)  
+- [**Risk management**](Deliverables-P56/Risk-Management.md)  
   Details identified risks, their potential impact, and mitigation strategies.
 
-- [**User Analysis**](Deliverables-P56/User-analysis.md)  
+- [**User analysis**](Deliverables-P56/User-analysis.md)  
   Summarizes user feedback and how it shaped project improvements.
 
-- [**Other Documentation**](Deliverables-P56/)  
+- [**Other documentation**](Deliverables-P56/)  
   Includes a project roadmap, product backlog, timeline, literature review, and additional research materials.
 
 ---
