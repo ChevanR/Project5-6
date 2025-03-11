@@ -24,7 +24,7 @@ This research investigates the integration of **VR streaming** and **haptic feed
 
 The methodology involves experimental testing combined with literature research. Key tools include **ALVR** for VR streaming, **Ultraleap** for haptic feedback, and **Clumsy** for simulating network degradation. Performance metrics (e.g., latency, frame rates, input delays) are logged and analyzed alongside user feedback.
 
-For a more detailed account of the experimental procedures, please refer to our [experimental research](./Deliverables-P56/Experimental-Research.md).
+For a more detailed account of the experimental procedures, please refer to our [experimental research](./Experimental-Research.md).
 
 ---
 
