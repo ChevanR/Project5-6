@@ -1,10 +1,10 @@
-# VR and Haptic Integration Project
+# VR and haptic integration project
 
 This project aims to revolutionize remote VR experiences by integrating cutting-edge haptic feedback through cloud technology, providing users with a truly immersive XR environment.
 
 ---
 
-## Table of Contents
+## Table of contents
 1. [Project Overview](#project-overview)  
 2. [Repository Structure](#repository-structure)  
 3. [Key Documentation](#key-documentation)  
@@ -15,17 +15,17 @@ This project aims to revolutionize remote VR experiences by integrating cutting-
 
 ---
 
-## Project Overview
+## Project overview
 This repository contains all the source code, documentation, and testing frameworks for the VR and haptic cloud integration project. Our objective is to merge VR streaming with haptic feedback to deliver an interactive extended reality (XR) experience. Key aspects include:
 
-1. **VR Streaming**: Remote rendering of VR environments utilizing cloud servers.  
-2. **Haptic Feedback**: Integration of tactile sensations via Ultraleap devices.  
-3. **Latency Management**: Simulation and analysis of network degradation.  
-4. **User Experience**: Optimizing usability under variable latency conditions.
+1. **VR streaming**: Remote rendering of VR environments utilizing cloud servers.  
+2. **Haptic feedback**: Integration of tactile sensations via Ultraleap devices.  
+3. **Latency management**: Simulation and analysis of network degradation.  
+4. **User experience**: Optimizing usability under variable latency conditions.
 
 ---
 
-## Repository Structure
+## Repository structure
 The repository is organized into the following folders and files to help you quickly find what you need:
 
 - **Deliverables-P56/**  
@@ -62,7 +62,7 @@ The repository is organized into the following folders and files to help you qui
 
 ---
 
-## Key Documentation
+## Key documentation
 
 - [**Research Report**](Deliverables-P56/Research-Report.md)  
   Provides detailed experimental methodologies, background research, and findings.
