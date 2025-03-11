@@ -133,7 +133,7 @@ Our findings indicate:
 - **Haptic feedback**: Functions adequately up to **300ms** latency, with clear degradation beyond.
 - **Combined system**: For smooth operation, latency should ideally be maintained below **125ms**.
 
-Additional details and graphs can be found in our [experimental research report](./Deliverables-P56/Experimental-Research.md).
+Additional details and graphs can be found in our [experimental research report](./Experimental-Research.md).
 
 ---
 
