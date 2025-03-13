@@ -31,7 +31,7 @@ title: Unity software diagram {
 stuff: "" {
   grid-rows: 1
   Class-diagram: UML class Diagram {
-    grid-rows: 1
+    grid-rows: 2
     PlayerMovement: PlayerMovement (PlayerMovement.cs) {
       shape: class
       +walkSpeed: float
@@ -64,6 +64,48 @@ stuff: "" {
       -SwitchToFirstPerson()
       -SwitchToThirdPerson()
       -moveCamera(targetPosition\: Transform): IEnumerator
+    }
+
+    PickupThrow: PickupThrow (PickupThrow.cs) {
+      shape: class
+
+      +player: Transform
+      +playerCam: Transform
+      +leftHandGrabPoint: Transform
+      +rightHandGrabPoint: Transform
+      +throwForce: float
+      +holdDistance: float
+      +moveSpeed: float
+
+      -isCarried: bool
+      -rb: Rigidbody
+
+      -Start()
+      -Update()
+      -PickUpObject()
+      -DropObject()
+      -ThrowObject()
+      -CarryObject()
+    }
+
+    CameraControl: CameraControl (CameraControl.cs) {
+      shape: class
+
+      +mouseSensitivity: float
+      +playerBody: Transform
+      -xRotation: float
+
+      -Start()
+      -Update()
+    }
+
+    PlayerBodyColorChange: PlayerBodyColorChange (PlayerBodyColorChange.cs) {
+      shape: class
+
+      +playerRenderer: Renderer
+      +armRenderers: "Renderer[]"
+
+      -OnTriggerEnter(other\: Collider)
     }
   }
   flowchart: Script flowcharts {
@@ -197,6 +239,124 @@ stuff: "" {
         incrementTime: "elapsedTime += Time.deltaTime"
         yield: "wait until next frame"
         setFinalPosition: "Set Final Position and Rotation"
+        end: return {class: end}
+      }
+    }
+
+    PickupThrow: PickupThrow (PickupThrow.cs) {
+      grid-columns: 3
+      start: "" {
+        start: Start() {class: start}
+        start -> a -> end
+        a: set rb to the rigidbody of this script's parent
+        end: return {class: end}
+      }
+
+      update: "" {
+        update: Update() {class: start}
+        update -> checkDistance
+        checkDistance -> pickUp: true {style.stroke: green}
+        checkDistance -> checkKeyE: false {style.stroke: red}
+        checkKeyE -> checkMouseUp: false {style.stroke: red}
+        checkKeyE -> drop: true {style.stroke: green}
+        checkMouseUp -> checkCarried: false {style.stroke: red}
+
+        checkMouseUp -> throw: true {style.stroke: green}
+
+        pickUp -> checkCarried
+        checkCarried -> end: false {style.stroke: red}
+        checkCarried -> carry: true {style.stroke: green}
+        throw -> checkCarried
+        drop -> checkCarried
+        carry -> end
+
+        checkDistance: "dist <= holdDistance AND Input.GetKeyDown(KeyCode.E) AND is not carried" {shape: diamond}
+        checkKeyE: isCarried is true AND Input.GetKeyDown(KeyCode.E) {shape: diamond}
+        checkMouseUp: isCarried is true AND Input.GetMouseButtonUp(0) {shape: diamond}
+        pickUp: PickUpObject()
+        checkCarried: isCarried is true {shape: diamond}
+        throw: ThrowObject()
+        carry: CarryObject()
+        drop: DropObject()
+        end: return {class: end}
+      }
+
+      PickUpObject: "" {
+        start: PickUpObject() {class: start}
+        start -> disablePhysics -> moveToMidpoint -> parentToPlayer -> end
+        disablePhysics: "Disable physics on the rb (rigidbody)\nSet isCarried to true"
+        moveToMidpoint: "Move object to midpoint between the hands"
+        parentToPlayer: "Attatch the player as parent to the transform"
+        end: return {class: end}
+      }
+
+      DropObject: "" {
+        start: DropObject() {class: start}
+        start -> initvars -> end
+        initvars: "Enable physics on the rb (rigidbody)\nisCarried = false\nDetach the parent from the transform"
+        end: return {class: end}
+      }
+
+      ThrowObject: "" {
+        start: ThrowObject() {class: start}
+        start -> enablePhysics -> applyThrowForce -> unsetCarried -> end
+        enablePhysics: "Enable physics on the rb (rigidbody)\nDetach the parent from the transform"
+        applyThrowForce: "Apply throw force in the direction of playerCam"
+        unsetCarried: "isCarried = false"
+        end: return {class: end}
+      }
+
+      CarryObject: "" {
+        start: CarryObject() {class: start}
+        start -> moveToMidpoint -> end
+        moveToMidpoint: "Move transform to midpoint between hands"
+        end: return {class: end}
+      }
+    }
+
+    CameraControl: CameraControl (CameraControl.cs) {
+      grid-columns: 1
+      start: "" {
+        start: Start() {class: start}
+        start -> a -> end
+        a: Lock the cursor position
+        end: return {class: end}
+      }
+      update: "" {
+        update: Update() {class: start}
+        update -> getMouseInput
+        getMouseInput -> rotatePlayerBody
+        rotatePlayerBody -> rotateCamera
+        rotateCamera -> clampRotation
+        clampRotation -> setLocalRotation
+        setLocalRotation -> end
+
+        getMouseInput: "Get mouse movement input for X and Y axes"
+        rotatePlayerBody: "Rotate the player body horizontally based on mouse X input"
+        rotateCamera: "Adjust the camera's vertical rotation based on mouse Y input"
+        clampRotation: "Clamp the camera's vertical rotation to prevent over-rotation"
+        setLocalRotation: "Apply the clamped rotation to the camera"
+        end: return {class: end}
+      }
+    }
+
+    PlayerBodyColorChange: PlayerBodyColorChange (PlayerBodyColorChange.cs) {
+      grid-columns: 1
+      onTriggerEnter: "" {
+        onTriggerEnter: OnTriggerEnter(other: Collider) {class: start}
+        onTriggerEnter -> checkTag
+        checkTag -> getMaterial: true {style.stroke: green}
+        checkTag -> end: false {style.stroke: red}
+        getMaterial -> applyToPlayer
+        applyToPlayer -> applyToArms
+        applyToArms -> logChange
+        logChange -> end
+
+        checkTag: "Check if the other collider has the tag 'ColorButton'" {shape: diamond}
+        getMaterial: "Get the material from the other collider's renderer"
+        applyToPlayer: "Set the player's renderer material to the button's material"
+        applyToArms: "Set each arm renderer's material to the button's material"
+        logChange: "Log the color change to the console"
         end: return {class: end}
       }
     }
