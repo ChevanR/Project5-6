@@ -105,7 +105,7 @@ Integrating these technologies introduces complex synchronization issues that ar
 ---
 
 ## References
-- **Carter, T., Seah, S. A., Subramanian, S., & Hollis, R. (2014).** Ultrahaptics: Multi-point mid-air haptic feedback for touchless interaction. *Proceedings of the 2014 ACM International Conference on Interactive Surfaces and Spaces*, 183–190. https://doi.org/10.1145/2642918.2642952
+- **Carter, T., Seah, S. A., Subramanian, S., & Hollis, R. (2014).** Ultrahaptics: Multi-point mid-air haptic feedback for touchless interaction. *Proceedings of the 2014 ACM International Conference on Interactive Surfaces and Spaces*, 183–190. [https://doi.org/10.1145/2642918.2642952](https://research-information.bris.ac.uk/ws/portalfiles/portal/34174214/sasia2014_haptic_shapes_authorversion.pdf)
 - **Chen, L., Park, S., & Kim, J. (2020).** Predictive rendering in cloud VR environments. *IEEE Transactions on Visualization and Computer Graphics, 26*(5), 2350–2360.
 - **Guo, X., Li, Y., & Wang, Q. (2020).** Ultrasonic haptic feedback in virtual reality medical simulation. *IEEE Access, 8*, 177161–177170. https://doi.org/10.1109/ACCESS.2020.3023500
 - **Shi, W., Cao, J., & Zhang, L. (2022).** Edge computing for low-latency VR streaming. *IEEE Internet of Things Journal, 9*(3), 1765–1776.
